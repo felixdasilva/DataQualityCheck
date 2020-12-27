@@ -20,7 +20,8 @@ def main():
 #Completeness
       st.text(TotalRows)
       Empty = df.isnull().sum()
-      st.text(Empty)
+      PercentageEmpty = Empty/TotalRows
+      st.text(Empty, PercentageEmpty)
   
       
 #the page
