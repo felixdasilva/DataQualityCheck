@@ -6,7 +6,6 @@ import openpyxl
 
 #Importing and reading the file
 def main():
-  #st.header("Data Quality Profling Tool")
   data_file = st.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
   
   if data_file is not None:
@@ -16,8 +15,10 @@ def main():
       df = pd.read_excel(data_file, engine='openpyxl')
       
 #Completeness
-
-
+  df.count()
+  df.shape()
+  df.isna()
+  
       
 #the page
 
