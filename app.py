@@ -30,9 +30,10 @@ def main():
       st.text(CompletenessScore)
       
 #Uniqueness
-      
+     
       Uniqueness = len(df.drop_duplicates())
       UniquenessScore = Uniqueness / TotalRows
+      st.subheader('Uniqueness Score')
       st.text(UniquenessScore)
       
 #the page
