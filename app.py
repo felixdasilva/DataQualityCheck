@@ -1,7 +1,10 @@
+#importing all the packages
+
 import pandas as pd
 import streamlit as st
+import openpyxl
 
-#The component
+#Importing and reading the file
 def main():
   #st.header("Data Quality Profling Tool")
   data_file = st.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
@@ -11,6 +14,10 @@ def main():
       df = pd.read_csv(data_file)
     except:
       df = pd.read_excel(data_file, engine='openpyxl')
+      
+#Completeness
+
+
       
 #the page
 
