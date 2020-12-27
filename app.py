@@ -14,7 +14,11 @@ def main():
     except:
       df = pd.read_excel(data_file, engine='openpyxl')
       
+#Global Numbers
+      TotalRows = Len(df)
+      
 #Completeness
+      st.text(TotalRows)
       Empty = df.isnull().sum()
       st.text(Empty)
   
