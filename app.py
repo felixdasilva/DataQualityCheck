@@ -16,9 +16,11 @@ def main():
       
 #Global Numbers
       TotalRows = len(df.index)
+      TotalColumns = len(df.columns)
       
 #Completeness
       st.text(TotalRows)
+      st.text(TotalColumns)
       Empty = df.isnull().sum()
       PercentageEmpty = Empty/TotalRows
       st.text(PercentageEmpty)
