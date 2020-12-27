@@ -15,7 +15,7 @@ def main():
       df = pd.read_excel(data_file, engine='openpyxl')
       
 #Global Numbers
-      TotalRows = Len(df)
+      TotalRows = len(df.index)
       
 #Completeness
       st.text(TotalRows)
