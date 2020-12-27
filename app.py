@@ -15,9 +15,9 @@ def main():
       df = pd.read_excel(data_file, engine='openpyxl')
       
 #Completeness
-  df.count()
-  df.shape()
-  df.isna()
+      df.count()
+      df.shape()
+      df.isna()
   
       
 #the page
