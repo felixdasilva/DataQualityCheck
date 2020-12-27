@@ -24,6 +24,9 @@ def main():
       Empty = df.isnull().sum()
       PercentageEmpty = Empty/TotalRows
       st.text(PercentageEmpty)
+      OverallEmpty = df.isnull().sum().sum()
+      OverallPercentageEmpty = (OverallEmpty/(TotalRows*TotalColumns))
+      st.text(OverallPercentageEmpty)
   
       
 #the page
