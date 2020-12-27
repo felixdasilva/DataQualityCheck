@@ -26,11 +26,13 @@ def main():
       st.text(PercentageEmpty)
       OverallEmpty = df.isnull().sum().sum()
       OverallPercentageEmpty = (OverallEmpty/(TotalRows*TotalColumns))
-      st.subheading("Completeness Score")
+      st.suheader("Completeness Score")
       st.text(OverallPercentageEmpty)
       
 #Uniqueness
-  
+      
+      Uniqueness = len(df.drop_duplicates())
+      st.text(Uniqueness)
       
 #the page
 
