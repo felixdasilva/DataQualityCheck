@@ -16,7 +16,7 @@ def main():
       
 #Completeness
       Empty = df.isnull().sum()
-      print(empty)
+      print(Empty)
   
       
 #the page
