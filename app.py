@@ -15,7 +15,7 @@ def main():
       df = pd.read_excel(data_file, engine='openpyxl')
       
 #Completeness
-      df.apply(lambda x: x.isnull().sum(), axis='columns')
+      df.isnull().sum()
   
       
 #the page
