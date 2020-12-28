@@ -46,7 +46,7 @@ def main():
       st.text(sol)
       c1 = st.selectbox('Select column 1', df.columns)
       c1 = df[c1]
-      c2 = st.selectbox('Select column 1', df.columns)
+      c2 = st.selectbox('Select column 2', df.columns)
       c2 = df[c2]
       Consistency = c1.corr(c2)
       st.text(Consistency)
