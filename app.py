@@ -38,6 +38,15 @@ def main():
 
 #consistency
       st.subheader("Consistency")
+      corr_matrix = df.corr().abs()
+      sol = (corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(np.bool))
+                  .stack()
+                  .sort_values(ascending=False))
+      st.text(sol)
+  
+  
+  
+  
       st.text("Are any of the following columns related to each other?")
       CorrTable = df.corr().abs()
       #st.text(CorrTable)
