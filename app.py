@@ -37,8 +37,8 @@ def main():
       st.text(UniquenessScore)
 
 #consistency
-      sb.subheader("Consistency")
-      sb.text("Which two columns should be consistent with each other?")
+      st.subheader("Consistency")
+      st.text("Which two columns should be consistent with each other?")
       Column1 = st.selectbox('Select column 1', df.columns)
       Column2 = st.selectbox('Select column 2', df.columns)
       Consistency = Column1.corr(Column2)
