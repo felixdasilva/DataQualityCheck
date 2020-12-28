@@ -45,13 +45,13 @@ def main():
       so = s.sort_values(kind="quicksort")
       so = so[0:3]
       st.text(so)
-      #Column1 = st.selectbox('Select column 1', df.columns)
-      #st.text(Column1)
-      #Column1 = Column1.cat.codes
-      #Column2 = st.selectbox('Select column 2', df.columns)
-      #st.text(Column2)
-      #Consistency = df[Column1].corr(df[Column2])
-      #st.text(Consistency)
+      Column1 = st.selectbox('Select column 1', df.columns)
+      st.text(Column1)
+      Column1 = Column1.cat.codes
+      Column2 = st.selectbox('Select column 2', df.columns)
+      st.text(Column2)
+      Consistency = df[Column1].corr(df[Column2])
+      st.text(Consistency)
       
 #the page
 
