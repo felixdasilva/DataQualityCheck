@@ -45,7 +45,7 @@ def main():
       so = s.sort_values(kind="quicksort")
       so = so[0:5]
       st.text(so)
-      so.text(so.shape)
+      st.text(so.shape)
       st.multiselect('Which ones?',so,default=None)
       #Column1 = st.selectbox('Select column 1', df.columns)
       #st.text(Column1)
