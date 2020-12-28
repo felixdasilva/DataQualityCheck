@@ -37,7 +37,7 @@ def main():
       st.text(UniquenessScore)
 
 #consistency
-      st.selectbox(df.columns)
+      st.selectbox('Select column 1', df.columns)
       #Consistency = 
 #the page
 
