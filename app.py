@@ -38,8 +38,14 @@ def main():
       st.text(UniquenessScore)
 
 #consistency
+      
       st.subheader("Consistency")
       st.text(df.dtypes)
+      df = pd.concat([
+        df.select_dtypes([], ['object']),
+        df.select_dtypes(['object']).apply(pd.Series.astype, dtype='category')
+        ], axis=1).reindex_axis(df.columns, axis=1)
+      st.text(df.types)
       c1 = st.selectbox('Select column 1', df.columns)
       c1 = df[c1]
       c2 = st.selectbox('Select column 2', df.columns)
