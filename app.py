@@ -48,7 +48,7 @@ def main():
       c2 = st.selectbox('Select column 2', df.columns)
       c2 = df[c2]
       Consistency = abs(c1.corr(c2))
-      Consistency = df.apply(lambda x : pd.factorize(x)[0]).corr(method='pearson', min_periods=1)
+      #Consistency = df.apply(lambda x : pd.factorize(x)[0]).corr(method='pearson', min_periods=1)
       st.text(Consistency)
   
       
