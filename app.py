@@ -35,7 +35,10 @@ def main():
       UniquenessScore = Uniqueness / TotalRows
       st.subheader('Uniqueness Score')
       st.text(UniquenessScore)
-      
+
+#consistency
+      st.selectbox(df.columns)
+      #Consistency = 
 #the page
 
 if __name__ == '__main__':
