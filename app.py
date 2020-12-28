@@ -44,8 +44,8 @@ def main():
                   .stack()
                   .sort_values(ascending=False))
       st.text(sol)
-      
-      c1 = df["Mean Temp (°C)"]
+      c1 = st.selectbox('Select column 1', df.columns)
+      c1 = df[c1]
       c2 = df["AdjustedMeans"]
       Consistency = c1.corr(c2)
       st.text(Consistency)
