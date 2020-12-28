@@ -45,7 +45,10 @@ def main():
                   .sort_values(ascending=False))
       st.text(sol)
       
-      Consistency = df(['Mean Temp (°C)']).corr(df['AdjustedMeans']) 
+      c1 = df["Mean Temp (°C)"]
+      c2 = df["AdjustedMeans"]
+      Consistency = c1.corr(c2)
+      st.text(Consistency)
   
   
   
