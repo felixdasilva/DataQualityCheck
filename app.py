@@ -39,13 +39,14 @@ def main():
 #consistency
       st.subheader("Consistency")
       st.text("Which two columns should be consistent with each other?")
-      Column1 = st.selectbox('Select column 1', df.columns)
-      st.text(Column1)
+      table.corr()
+      #Column1 = st.selectbox('Select column 1', df.columns)
+      #st.text(Column1)
       #Column1 = Column1.cat.codes
-      Column2 = st.selectbox('Select column 2', df.columns)
-      st.text(Column2)
-      Consistency = df[Column1].corr(df[Column2])
-      st.text(Consistency)
+      #Column2 = st.selectbox('Select column 2', df.columns)
+      #st.text(Column2)
+      #Consistency = df[Column1].corr(df[Column2])
+      #st.text(Consistency)
 #the page
 
 if __name__ == '__main__':
