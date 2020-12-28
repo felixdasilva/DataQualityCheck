@@ -45,12 +45,11 @@ def main():
       st.text(df.dtypes)
       c1 = st.selectbox('Select column 1', df.columns)
       c1 = df[c1]
-      c1 = pd.factorize(c1)
       c2 = st.selectbox('Select column 2', df.columns)
       c2 = df[c2]
       c2 = pd.factorize (c2)
       Consistency = abs(c1.corr(c2))
-      #Consistency = df.apply(lambda x : pd.factorize(x)[0]).corr(method='pearson', min_periods=1)
+      Consistency = df.apply(lambda x : pd.factorize(x)[0]).corr(method='pearson', min_periods=1)
       st.text(Consistency)
   
       
