@@ -45,7 +45,7 @@ def main():
       so = s.sort_values(kind="quicksort")
       so = so[0:5]
       st.text(so)
-      st.multiselect('Which ones?',so,default=none)
+      st.multiselect('Which ones?',so,default=None)
       #Column1 = st.selectbox('Select column 1', df.columns)
       #st.text(Column1)
       #Column1 = Column1.cat.codes
