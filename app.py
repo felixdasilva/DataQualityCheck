@@ -43,6 +43,7 @@ def main():
       #st.text(CorrTable)
       s = CorrTable.unstack()
       so = s.sort_values(kind="quicksort")
+      so = so[0:3]
       st.text(so)
       #Column1 = st.selectbox('Select column 1', df.columns)
       #st.text(Column1)
