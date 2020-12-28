@@ -39,11 +39,7 @@ def main():
 
 #consistency
       st.subheader("Consistency")
-      corr_matrix = df.corr().abs()
-      sol = (corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(np.bool))
-                  .stack()
-                  .sort_values(ascending=False))
-      st.text(sol)
+
       c1 = st.selectbox('Select column 1', df.columns)
       c1 = df[c1]
       c2 = st.selectbox('Select column 2', df.columns)
@@ -51,24 +47,6 @@ def main():
       Consistency = abs(c1.corr(c2))
       st.text(Consistency)
   
-  
-  
-      st.text("Are any of the following columns related to each other?")
-      CorrTable = df.corr().abs()
-      #st.text(CorrTable)
-      s = CorrTable.unstack()
-      so = s.sort_values(kind="quicksort")
-      so = so[0:5]
-      st.text(so)
-      st.text(so.shape)
-      st.multiselect('Which ones?',so,default=None)
-      #Column1 = st.selectbox('Select column 1', df.columns)
-      #st.text(Column1)
-      #Column1 = Column1.cat.codes
-      #Column2 = st.selectbox('Select column 2', df.columns)
-      #st.text(Column2)
-      #Consistency = df['''Column1'''].corr(df[Column2])
-      #st.text(Consistency)
       
 #the page
 
