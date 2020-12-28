@@ -44,8 +44,8 @@ def main():
       s = CorrTable.unstack()
       so = s.sort_values(kind="quicksort")
       so = so[0:5]
-      st.checkbox(so)
       st.text(so)
+      st.checkbox(so)
       #Column1 = st.selectbox('Select column 1', df.columns)
       #st.text(Column1)
       #Column1 = Column1.cat.codes
