@@ -44,7 +44,8 @@ def main():
                   .stack()
                   .sort_values(ascending=False))
       st.text(sol)
-  
+      
+      Consistency = df(['Mean Temp (°C)']).corr(df['AdjustedMeans']) 
   
   
   
@@ -62,7 +63,7 @@ def main():
       #Column1 = Column1.cat.codes
       #Column2 = st.selectbox('Select column 2', df.columns)
       #st.text(Column2)
-      #Consistency = df[Column1].corr(df[Column2])
+      #Consistency = df['''Column1'''].corr(df[Column2])
       #st.text(Consistency)
       
 #the page
