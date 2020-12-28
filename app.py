@@ -39,7 +39,8 @@ def main():
 #consistency
       st.subheader("Consistency")
       st.text("Which two columns should be consistent with each other?")
-      df.corr()
+      CorrTable = df.corr()
+      st.text(CorrTable)
       #Column1 = st.selectbox('Select column 1', df.columns)
       #st.text(Column1)
       #Column1 = Column1.cat.codes
@@ -47,6 +48,7 @@ def main():
       #st.text(Column2)
       #Consistency = df[Column1].corr(df[Column2])
       #st.text(Consistency)
+      
 #the page
 
 if __name__ == '__main__':
