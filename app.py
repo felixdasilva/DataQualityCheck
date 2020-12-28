@@ -40,7 +40,10 @@ def main():
       st.subheader("Consistency")
       st.text("Which two columns should be consistent with each other?")
       CorrTable = df.corr().abs()
-      st.text(CorrTable)
+      #st.text(CorrTable)
+      s = CorrTable.unstack()
+      so = s.sort_values(kind="quicksort")
+      st.text(so)
       #Column1 = st.selectbox('Select column 1', df.columns)
       #st.text(Column1)
       #Column1 = Column1.cat.codes
