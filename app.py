@@ -40,11 +40,12 @@ def main():
       st.subheader("Consistency")
       st.text("Which two columns should be consistent with each other?")
       Column1 = st.selectbox('Select column 1', df.columns)
-      Column1 = Column1.cat.codes
+      #Column1 = Column1.cat.codes
       Column2 = st.selectbox('Select column 2', df.columns)
       Column2 = Column2.cat.codes
-      Consistency = Column1.corr(Column2)
-      st.text(Consistency)
+      If Column2 is not null:
+        Consistency = Column1.corr(Column2)
+        st.text(Consistency)
 #the page
 
 if __name__ == '__main__':
