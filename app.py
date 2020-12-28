@@ -38,20 +38,21 @@ def main():
 
 #consistency
       st.subheader("Consistency")
-      st.text("Which two columns should be consistent with each other?")
+      st.text("Are any of the following columns related to each other?")
       CorrTable = df.corr().abs()
       #st.text(CorrTable)
       s = CorrTable.unstack()
       so = s.sort_values(kind="quicksort")
-      so = so[0:3]
+      so = so[0:5]
+      st.checkbox(so)
       st.text(so)
-      Column1 = st.selectbox('Select column 1', df.columns)
-      st.text(Column1)
+      #Column1 = st.selectbox('Select column 1', df.columns)
+      #st.text(Column1)
       #Column1 = Column1.cat.codes
-      Column2 = st.selectbox('Select column 2', df.columns)
-      st.text(Column2)
-      Consistency = df[Column1].corr(df[Column2])
-      st.text(Consistency)
+      #Column2 = st.selectbox('Select column 2', df.columns)
+      #st.text(Column2)
+      #Consistency = df[Column1].corr(df[Column2])
+      #st.text(Consistency)
       
 #the page
 
