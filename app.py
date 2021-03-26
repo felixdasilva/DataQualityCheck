@@ -10,13 +10,15 @@ import re
 #Regex Types
 Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 
-st.header("Objective Data Quality Score Calculator")
+st.Title("Data Quality Score Calculator")
+st.sidebar.Title("Subjective Data Quality Score")
+st.sidebar.Title("Objective Data Quality")
 
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
     #st.sidebar.subheader("Timeliness")
     LastRefresh=st.date_input('Last Refresh Date')
-    NextRefresh=st.sidebar.date_input('Next Refresh Date')
+    NextRefresh=st.date_input('Next Refresh Date')
 #st.write(date.today())
 Numerator = date.today() - LastRefresh
 Numerator = Numerator.days
