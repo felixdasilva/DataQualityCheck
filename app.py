@@ -41,7 +41,22 @@ with st.sidebar.beta_expander("Objectivity", expanded=False):
     st.text("1 = Completely biased data.")
     st.text("5 = Useable but beware.")        
     st.text("10 = Free from any bias.")
-    
+
+with st.sidebar.beta_expander("Scarcity", expanded=False):
+    st.write("The probability that other organizations also have the same data")
+    Interpretability = st.slider('Is this data objective?', 0, 10, 1)
+    st.text("0 = N/A")
+    st.text("1 = Very common and duplicated data.")
+    st.text("5 = Might exist elsewhere.")        
+    st.text("10 = This is the only source.")
+
+with st.sidebar.beta_expander("Multifunctionality", expanded=False):
+    st.write("The number of business processes that use or rely from this type of data")
+    Interpretability = st.slider('Is this data objective?', 0, 10, 1)
+    st.text("0 = N/A")
+    st.text("1 = Only we use this data.")
+    st.text("5 = Groups of people accross the Region use this.")        
+    st.text("10 = Everyone uses this data.")
 
 
 
