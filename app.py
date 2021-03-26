@@ -47,7 +47,8 @@ def main():
       st.text(CompletenessScore)
       
 #Uniqueness
-     
+ #Add option for user to ignore / select columns
+  
       Uniqueness = len(df.drop_duplicates())
       UniquenessScore = Uniqueness / TotalRows
       st.subheader('Uniqueness Score')
