@@ -7,6 +7,9 @@ import numpy as np
 from datetime import date
 import re
 
+#Regex Types
+Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
+
 st.header("Objective Data Quality Score Calculator")
 
 #Timeliness
@@ -63,20 +66,31 @@ def main():
       st.text(UniquenessScore)
 
 #Validity
-
+      st.subheader("Validity")
+      v1 = st.selectbox('Select the column you want to check', df.columns)
+      st.title("Let's create a table!")
+      for i in range(1, TotalColumns):
+          cols = st.beta_columns(2)
+          cols[0].write(df.columns)
+          cols[1].write(f'{i}')
+    
+      v1 = df[v1]
+      RECheck = st.selectbox('Select column 1', df.columns)
+    
+    
 #consistency
       
-      st.subheader("Consistency")
-      st.text(df.dtypes)
-      df.loc[:, df.dtypes == 'object'] = df.select_dtypes(['object']).apply(lambda x: x.astype('category'))
-      st.text(df.dtypes)
-      c1 = st.selectbox('Select column 1', df.columns)
-      c1 = df[c1]
-      c2 = st.selectbox('Select column 2', df.columns)
-      c2 = df[c2]
+      #st.subheader("Consistency")
+      #st.text(df.dtypes)
+      #df.loc[:, df.dtypes == 'object'] = df.select_dtypes(['object']).apply(lambda x: x.astype('category'))
+      #st.text(df.dtypes)
+      #c1 = st.selectbox('Select column 1', df.columns)
+      #c1 = df[c1]
+      #c2 = st.selectbox('Select column 2', df.columns)
+      #c2 = df[c2]
       #Consistency = abs(c1.corr(c2))
-      Consistency = df.apply(lambda x : pd.factorize(x)[0]).corr(method='pearson', min_periods=1)
-      st.table(Consistency)
+      #Consistency = df.apply(lambda x : pd.factorize(x)[0]).corr(method='pearson', min_periods=1)
+      #st.table(Consistency)
   
       
 #the page
