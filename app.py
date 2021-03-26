@@ -8,8 +8,10 @@ from datetime import datetime
 
 #Timeliness
 st.header("Official Date Picker")
-st.date_input('start date')
-st.date_input('end date')
+LastRefresh=st.date_input('Last Refresh Date')
+NextRefresh=st.date_input('Next Refresh Date')
+st.write(date.today()) 
+
 
 #Importing and reading the file
 def main():
