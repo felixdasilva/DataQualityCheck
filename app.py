@@ -28,7 +28,7 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
 
 with st.sidebar.beta_expander("Believability", expanded=False):
     st.write("The data is trusted")
-    Interpretability = st.slider('Do you believe in this data?', 0, 10, 1)
+    Believability = st.slider('Do you believe in this data?', 0, 10, 1)
     st.text("0 = N/A")
     st.text("1 = No, absolutely not.")
     st.text("5 = Useable but beware.")        
@@ -36,7 +36,7 @@ with st.sidebar.beta_expander("Believability", expanded=False):
 
 with st.sidebar.beta_expander("Objectivity", expanded=False):
     st.write("The source of the data is believed to be impartial")
-    Interpretability = st.slider('Is this data objective?', 0, 10, 1)
+    Objectivity = st.slider('Is this data objective?', 0, 10, 1)
     st.text("0 = N/A")
     st.text("1 = Completely biased data.")
     st.text("5 = Useable but beware.")        
@@ -44,7 +44,7 @@ with st.sidebar.beta_expander("Objectivity", expanded=False):
 
 with st.sidebar.beta_expander("Scarcity", expanded=False):
     st.write("The probability that other organizations also have the same data")
-    Interpretability = st.slider('Is this data objective?', 0, 10, 1)
+    Scarcity = st.slider('Is this data objective?', 0, 10, 1)
     st.text("0 = N/A")
     st.text("1 = Very common and duplicated data.")
     st.text("5 = Might exist elsewhere.")        
@@ -52,7 +52,7 @@ with st.sidebar.beta_expander("Scarcity", expanded=False):
 
 with st.sidebar.beta_expander("Multifunctionality", expanded=False):
     st.write("The number of business processes that use or rely from this type of data")
-    Interpretability = st.slider('Is this data objective?', 0, 10, 1)
+    Multifunctionality = st.slider('Is this data objective?', 0, 10, 1)
     st.text("0 = N/A")
     st.text("1 = Only we use this data.")
     st.text("5 = Groups of people accross the Region use this.")        
