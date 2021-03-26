@@ -16,7 +16,7 @@ Numerator = Numerator.days
 Denominator = NextRefresh - LastRefresh
 Denominator = Denominator.days
 
-Timeliness = 1-Numerator/Denominator
+Timeliness = (1-Numerator/Denominator)*100
 st.write(Timeliness)
 
 
