@@ -16,14 +16,15 @@ st.header("Objective Data Quality Score Calculator")
 st.subheader("Timeliness Score")
 LastRefresh=st.date_input('Last Refresh Date')
 NextRefresh=st.date_input('Next Refresh Date')
-st.write(date.today())
+#st.write(date.today())
 Numerator = date.today() - LastRefresh
 Numerator = Numerator.days
 Denominator = NextRefresh - LastRefresh
+Denominator = 1
 Denominator = Denominator.days
 
 Timeliness = (1-Numerator/Denominator)*100
-st.text(Timeliness)
+st.subheader(Timeliness)
 
 
 st.subheader("Objective Data Quality")
@@ -69,10 +70,10 @@ def main():
       st.subheader("Validity")
       v1 = st.selectbox('Select the column you want to check', df.columns)
       regexcheck = st.selectbox('What validation would you like to apply?', 'Email')
-      x = re.search(Emailregex, v1)
-      if x:
-        print("YES! We have a match!")
-      else:
+      #x = re.search(Emailregex, v1)
+      #if x:
+        #print("YES! We have a match!")
+     # else:
         print("No match")
       #count = 0
       #while True:
