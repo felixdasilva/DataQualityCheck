@@ -14,8 +14,8 @@ st.set_page_config(layout="wide")
 Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 
 st.title("Data Quality Score Calculator")
-st.sidebar.title("Subjective Data Quality Score")
-st.sidebar.title("Objective Data Quality")
+st.sidebar.heading("Subjective Data Quality Score")
+st.sidebar.heading("Objective Data Quality")
 
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
