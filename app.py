@@ -19,7 +19,7 @@ NextRefresh=st.date_input('Next Refresh Date')
 #st.write(date.today())
 Numerator = date.today() - LastRefresh
 Numerator = Numerator.days
-Denominator = 1
+Denominator = '1'
 Denominator = NextRefresh - LastRefresh
 Denominator = Denominator.days
 
