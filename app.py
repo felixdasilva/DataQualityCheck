@@ -40,8 +40,8 @@ def main():
 #Global Numbers
       TotalRows = len(df.index)
       TotalColumns = len(df.columns)
-      st.markdown('# of Rows', TotalRows)
-      st.markdown('# of Columns',TotalColumns)
+      st.markdown('No. of Rows' & TotalRows)
+      st.markdown('No. of Columns' & TotalColumns)
       
 #Completeness
       Empty = df.isnull().sum()
