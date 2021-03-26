@@ -7,12 +7,15 @@ import numpy as np
 from datetime import date
 import re
 
+#configs
+st.set_page_config(layout="wide")
+
 #Regex Types
 Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 
-st.Title("Data Quality Score Calculator")
-st.sidebar.Title("Subjective Data Quality Score")
-st.sidebar.Title("Objective Data Quality")
+st.title("Data Quality Score Calculator")
+st.sidebar.title("Subjective Data Quality Score")
+st.sidebar.title("Objective Data Quality")
 
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
