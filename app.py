@@ -7,6 +7,9 @@ import numpy as np
 from datetime import date
 import re
 
+#configs
+np.seterr(divide='ignore')
+
 #Regex Types
 Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 
@@ -19,7 +22,6 @@ NextRefresh=st.date_input('Next Refresh Date')
 #st.write(date.today())
 Numerator = date.today() - LastRefresh
 Numerator = Numerator.days
-Denominator = '1'
 Denominator = NextRefresh - LastRefresh
 Denominator = Denominator.days
 
