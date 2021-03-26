@@ -19,7 +19,7 @@ Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 #Subjective data Quality
 st.sidebar.subheader("Subjective Data Quality")
 with st.sidebar.beta_expander("Interpretability", expanded=False):
-    st.text("The degree to which the data has a meaning and is easy to understand")
+    st.write("The degree to which the data has a meaning and is easy to understand")
     Interpretability = st.slider('How easy is your dataset is to understand?', 0, 10, 1)
     st.text("0 = N/A")
     st.text("1 = Needs to be explained by expert")
