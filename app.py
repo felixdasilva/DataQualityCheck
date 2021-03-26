@@ -11,13 +11,13 @@ st.header("Timelienss Calculator")
 LastRefresh=st.date_input('Last Refresh Date')
 NextRefresh=st.date_input('Next Refresh Date')
 st.write(date.today())
-  Numerator = date.today() - LastRefresh
-  Numerator = Numerator.days
-  Denominator = NextRefresh - LastRefresh
-  Denominator = Denominator.days
+Numerator = date.today() - LastRefresh
+Numerator = Numerator.days
+Denominator = NextRefresh - LastRefresh
+Denominator = Denominator.days
 
-  Timeliness = 1-Numerator/Denominator
-  st.write(Timeliness)
+Timeliness = 1-Numerator/Denominator
+st.write(Timeliness)
 
 
 
