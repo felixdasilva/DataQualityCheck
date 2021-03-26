@@ -57,6 +57,14 @@ with st.sidebar.beta_expander("Multifunctionality", expanded=False):
     st.text("1 = Only we use this data.")
     st.text("5 = A few businesses use this.")        
     st.text("10 = Everyone uses this data.")
+    
+with st.sidebar.beta_expander("Usability", expanded=False):
+    st.write("The data is helpful in performing a business function")
+    Multifunctionality = st.slider('Do other business areas rely on this?', 0, 10, 1)
+    st.text("0 = N/A")
+    st.text("1 = Not useful but it's the best we have.")
+    st.text("5 = Good enough most of the time.")        
+    st.text("10 = Very useful and critical to day to day.")
 
 
 
