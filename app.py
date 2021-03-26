@@ -5,9 +5,12 @@ import streamlit as st
 import openpyxl
 import numpy as np
 from datetime import date
+import re
+
+st.header("Objective Data Quality Score Calculator")
 
 #Timeliness
-st.header("Timelienss Calculator")
+st.subheader("Timeliness Score")
 LastRefresh=st.date_input('Last Refresh Date')
 NextRefresh=st.date_input('Next Refresh Date')
 st.write(date.today())
@@ -20,6 +23,7 @@ Timeliness = (1-Numerator/Denominator)*100
 st.write(Timeliness)
 
 
+st.subheader("Objective Data Quality")
 
 #Importing and reading the file
 def main():
@@ -31,13 +35,15 @@ def main():
     except:
       df = pd.read_excel(data_file, engine='openpyxl')
       
+st.subheader("About Your Data")
+      
 #Global Numbers
       TotalRows = len(df.index)
       TotalColumns = len(df.columns)
+      st.markdown('# of Rows', TotalRows)
+      st.markdown('# of Columns',TotalColumns)
       
 #Completeness
-      st.text(TotalRows)
-      st.text(TotalColumns)
       Empty = df.isnull().sum()
       PercentageEmpty = Empty/TotalRows
       st.text(PercentageEmpty)
@@ -53,6 +59,8 @@ def main():
       UniquenessScore = Uniqueness / TotalRows
       st.subheader('Uniqueness Score')
       st.text(UniquenessScore)
+
+#Validity
 
 #consistency
       
