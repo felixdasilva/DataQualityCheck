@@ -68,12 +68,12 @@ def main():
 #Validity
       st.subheader("Validity")
       v1 = st.selectbox('Select the column you want to check', df.columns)
-      regexcheck = st.selectbox('What validation would you like to apply?', "Email")
+      regexcheck = st.selectbox('What validation would you like to apply?', 'Email')
       count = 0
       while True:
           match = re.search(Emailregex, v1)
           count += 1
-          st.write(count)
+      st.write(count)
 
     
     
