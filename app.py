@@ -7,9 +7,9 @@ import numpy as np
 from datetime import datetime
 
 #Timeliness
-
-LastRefresh = st.slider("LastRefreshDate?", value=datetime(2020, 5, 5, 9, 30), format="MM/DD/YY")
-st.write("Start time:", LastRefresh)
+st.header("Official Date Picker")
+st.date_input('start date')
+st.date_input('end date')
 
 #Importing and reading the file
 def main():
