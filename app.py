@@ -19,7 +19,7 @@ Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 #Subjective data Quality
 st.sidebar.subheader("Subjective Data Quality")
 with st.sidebar.beta_expander("Interpretability", expanded=False):
-    st.write("The degree to which the data has a meaning and is easy to understand")
+    st.write("The data has a meaning and is easy to understand")
     Interpretability = st.slider('How easy is your dataset is to understand?', 0, 10, 1)
     st.text("0 = N/A")
     st.text("1 = Needs to be explained by expert")
@@ -27,12 +27,20 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     st.text("10 = Complete understanding")
 
 with st.sidebar.beta_expander("Believability", expanded=False):
-    st.write("The degree to which the data is trusted")
+    st.write("The data is trusted")
     Interpretability = st.slider('Do you believe in this data?', 0, 10, 1)
     st.text("0 = N/A")
     st.text("1 = No, absolutely not.")
     st.text("5 = Useable but beware.")        
-    st.text("10 = I'll bet my house on it.")  
+    st.text("10 = I'll bet my house on it.")
+
+with st.sidebar.beta_expander("Objectivity", expanded=False):
+    st.write("The source of the data is believed to be impartial")
+    Interpretability = st.slider('Is this data objective?', 0, 10, 1)
+    st.text("0 = N/A")
+    st.text("1 = Completely biased data.")
+    st.text("5 = Useable but beware.")        
+    st.text("10 = Free from any bias.")
     
 
 
