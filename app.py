@@ -9,7 +9,8 @@ import re
 
 #configs
 st.set_page_config(layout="wide")
-st.title("Data Quality Score Tool")
+st.sidebar.title("Data Quality Score Tool")
+ReportTitle=st.sidebar.text_input('What is the dataset name?')
 
 #Regex Types
 Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
