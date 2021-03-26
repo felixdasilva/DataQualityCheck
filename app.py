@@ -68,14 +68,13 @@ def main():
 #Validity
       st.subheader("Validity")
       v1 = st.selectbox('Select the column you want to check', df.columns)
-      st.title("Let's create a table!")
-      for i in range(1, TotalColumns):
-          cols = st.beta_columns(2)
-          cols[0].write(df.columns)
-          cols[1].write(f'{i}')
-    
-      v1 = df[v1]
-      RECheck = st.selectbox('Select column 1', df.columns)
+      regexcheck = st.selectbox('Email')
+      count = 0
+      while True:
+        match = re.search(Emailregex, v1)
+        count += 1
+        st.write(count)
+
     
     
 #consistency
