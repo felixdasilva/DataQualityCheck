@@ -32,7 +32,7 @@ def main():
       st.text(CompletenessScore)
       
 #Timeliness
-      #LastRefresh = st.slider('LastRefreshDate?', value=datetime(2020, 1, 1, 9, 30, format="MM/DD/YY - hh:mm")
+      LastRefresh = st.slider('LastRefreshDate?', value=datetime(2020, 1, 1, 9, 30, format="MM/DD/YY - hh:mm")
       
 #Uniqueness
      
