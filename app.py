@@ -23,8 +23,10 @@ Denominator = NextRefresh - LastRefresh
 Denominator = Denominator.days
 
 
-np.seterr(divide='ignore')
-Timeliness = (1-Numerator/Denominator)*100
+if Denominator !=0:
+  Timeliness = (1-Numerator/Denominator)*100
+else:
+  Timeliness = 0
 st.subheader(Timeliness)
 
 
