@@ -18,12 +18,12 @@ Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 
 #Subjective data Quality
 st.sidebar.subheader("Subjective Data Quality")
-st.sidebar.text("If any of these dimensions not apply, select 0=N/A")
 with st.sidebar.beta_expander("Interpretability", expanded=False):
     Interpretability = st.slider('How easy is your dataset is to understand?', 0, 10, 1)
+    st.text("0 = N/A")
     st.text("1 = Needs to be explained by expert")
     st.text("5 = Needs documentation to understand")        
-    st.text("10 = Pick up off the floor and understand completely")        
+    st.text("10 = Complete understanding from")        
     
 
 
