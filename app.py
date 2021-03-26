@@ -35,7 +35,7 @@ def main():
     except:
       df = pd.read_excel(data_file, engine='openpyxl')
       
-st.subheader("About Your Data")
+      st.subheader("About Your Data")
       
 #Global Numbers
       TotalRows = len(df.index)
