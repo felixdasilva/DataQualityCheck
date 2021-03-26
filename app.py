@@ -13,7 +13,7 @@ Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 st.header("Objective Data Quality Score Calculator")
 
 #Timeliness
-with st.beta_expander("Timeliness", expanded=False)
+with st.beta_expander("Timeliness", expanded=False):
   st.sidebar.subheader("Timeliness")
   LastRefresh=st.sidebar.date_input('Last Refresh Date')
   NextRefresh=st.sidebar.date_input('Next Refresh Date')
