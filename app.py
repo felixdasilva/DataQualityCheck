@@ -24,7 +24,15 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     st.text("0 = N/A")
     st.text("1 = Needs to be explained by expert")
     st.text("5 = Needs documentation to understand")        
-    st.text("10 = Complete understanding")        
+    st.text("10 = Complete understanding")
+
+with st.sidebar.beta_expander("Believability", expanded=False):
+    st.write("The degree to which the data is trusted")
+    Interpretability = st.slider('Do you believe in this data?', 0, 10, 1)
+    st.text("0 = N/A")
+    st.text("1 = No, absolutely not.")
+    st.text("5 = Useable but beware.")        
+    st.text("10 = I'll bet my house on it.")  
     
 
 
