@@ -40,9 +40,10 @@ def main():
 #Global Numbers
       TotalRows = len(df.index)
       TotalColumns = len(df.columns)
-      st.markdown('No. of Rows' & TotalRows)
-      st.markdown('No. of Columns' & TotalColumns)
+      st.markdown('No. of Rows', TotalRows)
+      st.markdown('No. of Columns', TotalColumns)
       
+      st.subheader("Completeness")
 #Completeness
       Empty = df.isnull().sum()
       PercentageEmpty = Empty/TotalRows
