@@ -66,6 +66,22 @@ with st.sidebar.beta_expander("Usability", expanded=False):
     st.text("5 = Good enough most of the time.")        
     st.text("10 = Very useful and critical to day to day.")
 
+#Sujbective Quality Display
+
+col1, col2, col3 = st.beta_columns(3)
+
+with col1:
+    st.subheader("Interpretability")
+    st.subheader(Interpretability)
+with col2:
+    st.subheader("Believability")
+    st.subheader(Believability)
+with col3:
+    st.subheader("Objectivity")
+    st.subheader(Objectivity)    
+
+
+
 
 
 st.sidebar.subheader("Objective Data Quality")
