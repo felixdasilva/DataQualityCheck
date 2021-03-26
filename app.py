@@ -6,6 +6,10 @@ import openpyxl
 import numpy as np
 from datetime import datetime
 
+#Timeliness
+
+LastRefresh = st.slider("LastRefreshDate?", value=datetime(2020, 1, 1, 9, 30, format="MM/DD/YY - hh:mm")
+
 #Importing and reading the file
 def main():
   data_file = st.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
@@ -30,9 +34,6 @@ def main():
       CompletenessScore = (OverallEmpty/(TotalRows*TotalColumns))
       st.subheader('Completeness Score')
       st.text(CompletenessScore)
-      
-#Timeliness
-      LastRefresh = st.slider("LastRefreshDate?", value=datetime(2020, 1, 1, 9, 30, format="MM/DD/YY - hh:mm")
       
 #Uniqueness
      
