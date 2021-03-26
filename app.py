@@ -20,7 +20,7 @@ Denominator = NextRefresh - LastRefresh
 Denominator = Denominator.days
 
 Timeliness = (1-Numerator/Denominator)*100
-st.write(Timeliness)
+st.text(Timeliness)
 
 
 st.subheader("Objective Data Quality")
@@ -45,12 +45,13 @@ def main():
       
       st.subheader("Completeness")
 #Completeness
+      st.subheader('Completeness Score')
       Empty = df.isnull().sum()
-      PercentageEmpty = Empty/TotalRows
+      PercentageEmpty = (1-Empty/TotalRows)*100
       st.text(PercentageEmpty)
       OverallEmpty = df.isnull().sum().sum()
-      CompletenessScore = (OverallEmpty/(TotalRows*TotalColumns))
-      st.subheader('Completeness Score')
+      CompletenessScore = (1-(OverallEmpty/(TotalRows*TotalColumns)))*100
+      st.subheader('Overall Completeness Score')
       st.text(CompletenessScore)
       
 #Uniqueness
