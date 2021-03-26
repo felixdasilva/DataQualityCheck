@@ -13,22 +13,22 @@ Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 st.header("Objective Data Quality Score Calculator")
 
 #Timeliness
-st.beta_expander(label="Timeliness", expanded=False)
+with st.beta_expander(label="Timeliness", expanded=False)
   st.sidebar.subheader("Timeliness")
   LastRefresh=st.sidebar.date_input('Last Refresh Date')
   NextRefresh=st.sidebar.date_input('Next Refresh Date')
 #st.write(date.today())
-Numerator = date.today() - LastRefresh
-Numerator = Numerator.days
-Denominator = NextRefresh - LastRefresh
-Denominator = Denominator.days
+  Numerator = date.today() - LastRefresh
+  Numerator = Numerator.days
+  Denominator = NextRefresh - LastRefresh
+  Denominator = Denominator.days
 
 
-if Denominator !=0:
-  Timeliness = (1-Numerator/Denominator)*100
-else:
-  Timeliness = 0
-st.subheader("Timeliness Score = ", Timeliness)
+  if Denominator !=0:
+    Timeliness = (1-Numerator/Denominator)*100
+  else:
+    Timeliness = 0
+  st.subheader(Timeliness)
 #st.subheader(Timeliness)
 
 
