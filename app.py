@@ -18,10 +18,10 @@ with st.sidebar.beta_expander("Timeliness", expanded=False):
     LastRefresh=st.date_input('Last Refresh Date')
     NextRefresh=st.sidebar.date_input('Next Refresh Date')
 #st.write(date.today())
-  Numerator = date.today() - LastRefresh
-  Numerator = Numerator.days
-  Denominator = NextRefresh - LastRefresh
-  Denominator = Denominator.days
+Numerator = date.today() - LastRefresh
+Numerator = Numerator.days
+Denominator = NextRefresh - LastRefresh
+Denominator = Denominator.days
 
 
 if Denominator !=0:
