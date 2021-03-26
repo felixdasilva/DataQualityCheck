@@ -8,7 +8,7 @@ from datetime import datetime
 
 #Timeliness
 
-LastRefresh = st.slider("LastRefreshDate?", value=datetime(2020, 1, 1, 9, 30), format="MM/DD/YY - hh:mm")
+LastRefresh = st.slider("LastRefreshDate?", value=datetime(2020, 5, 5, 9, 30), format="MM/DD/YY")
 st.write("Start time:", LastRefresh)
 
 #Importing and reading the file
