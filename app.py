@@ -72,7 +72,7 @@ st.subheader("Subjective Quality Scores")
 col1, col2, col3 = st.beta_columns(3)
 
 with col1:
-    st.markdown(**"Interpretability"**)
+    st.markdown(**Interpretability**)
     st.subheader(Interpretability)
 with col2:
     st.subheader("Believability")
