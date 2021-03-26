@@ -10,7 +10,15 @@ from datetime import date
 st.header("Official Date Picker")
 LastRefresh=st.date_input('Last Refresh Date')
 NextRefresh=st.date_input('Next Refresh Date')
-st.write(date.today()) 
+st.write(date.today())
+Numerator = date.today() - LastRefresh
+Numerator = Numerator.days
+Denominator = NextRefresh - LastRefresh
+Denominator = Denominator.days
+
+Timeliness = 1-Numerator/Denominator
+st.write(Timeliness)
+
 
 
 #Importing and reading the file
