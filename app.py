@@ -9,13 +9,22 @@ import re
 
 #configs
 st.set_page_config(layout="wide")
+st.title("Data Quality Score Tool")
 
 #Regex Types
 Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 
-st.title("Data Quality Score Calculator")
-st.sidebar.header("Subjective Data Quality Score")
-st.sidebar.header("Objective Data Quality")
+
+
+#Subjective data Quality
+st.sidebar.subheader("Subjective Data Quality Score")
+with st.sidebar.beta_expander("Interpretability", expanded=False):
+    Interpretability = st.slider('How easy is your dataset is to understand?', 0, 10, 1)
+    
+
+
+
+st.sidebar.subheader("Objective Data Quality")
 
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
