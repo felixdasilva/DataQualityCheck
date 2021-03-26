@@ -7,9 +7,6 @@ import numpy as np
 from datetime import date
 import re
 
-#configs
-np.seterr(divide='ignore')
-
 #Regex Types
 Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 
@@ -25,6 +22,8 @@ Numerator = Numerator.days
 Denominator = NextRefresh - LastRefresh
 Denominator = Denominator.days
 
+
+np.seterr(divide='ignore')
 Timeliness = (1-Numerator/Denominator)*100
 st.subheader(Timeliness)
 
