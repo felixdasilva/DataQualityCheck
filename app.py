@@ -68,10 +68,11 @@ with st.sidebar.beta_expander("Usability", expanded=False):
 
 #Sujbective Quality Display
 
+st.subheader("Subjective Quality Scores")
 col1, col2, col3 = st.beta_columns(3)
 
 with col1:
-    st.subheader("Interpretability")
+    st.markdown(**"Interpretability"**)
     st.subheader(Interpretability)
 with col2:
     st.subheader("Believability")
@@ -102,8 +103,8 @@ if Denominator !=0:
   Timeliness = (1-Numerator/Denominator)*100
 else:
   Timeliness = 0
+st.subheader("Timeliness")
 st.subheader(Timeliness)
-#st.subheader(Timeliness)
 
 
 st.subheader("Objective Data Quality")
