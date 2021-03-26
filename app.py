@@ -30,6 +30,9 @@ def main():
       st.subheader('Completeness Score')
       st.text(CompletenessScore)
       
+#Timeliness
+      LastRefresh = st.slider('LastRefreshDate?', value=datetime(2020, 1, 1, 1, 1), format="MM/DD/YY - hh:mm")
+      
 #Uniqueness
      
       Uniqueness = len(df.drop_duplicates())
