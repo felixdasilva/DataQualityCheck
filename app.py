@@ -89,6 +89,19 @@ with col3:
 
 st.sidebar.subheader("Objective Data Quality")
 
+#Importing and reading the file
+st.write('Upload your file to calculate')
+def main():
+  data_file = st.sidebar.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
+  
+  if data_file is not None:
+    try:
+      df = pd.read_csv(data_file)
+    except:
+      df = pd.read_excel(data_file, engine='openpyxl')
+      
+      st.subheader("About Your Data")
+
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
     #st.sidebar.subheader("Timeliness")
