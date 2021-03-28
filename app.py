@@ -128,7 +128,7 @@ with st.sidebar.beta_expander("Timeliness", expanded=False):
 
 
 
-st.subheader("Objective Data Quality")
+#st.subheader("Objective Data Quality")
 
 #Importing and reading the file
 def main():
