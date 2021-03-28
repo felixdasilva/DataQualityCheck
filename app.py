@@ -90,11 +90,11 @@ with col3:
 st.sidebar.subheader("Objective Data Quality")
 
 #Importing and reading the file
-st.sidebar.write('Upload your file to calculate your scores.')
-def main():
-  data_file = st.sidebar.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
-  
-  if data_file is not None:
+st.write('Upload your file to calculate your scores.')
+
+with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=False):
+    data_file = st.sidebar.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
+    if data_file is not None:
     try:
       df = pd.read_csv(data_file)
     except:
