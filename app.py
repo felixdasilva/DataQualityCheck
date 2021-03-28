@@ -102,7 +102,7 @@ with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=F
             df = pd.read_excel(data_file, engine='openpyxl')
             
 #step 2: Refresh Time
-with st.sidebar.beta_expander("2. Last and Next Refresh Date", expanded=False):
+with st.sidebar.beta_expander("2. Provide Refresh Dates", expanded=False):
     LastRefresh=st.date_input('Last Refresh Date')
     NextRefresh=st.date_input('Next Refresh Date')
     Numerator = date.today() - LastRefresh
