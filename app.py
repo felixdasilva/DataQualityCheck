@@ -74,7 +74,8 @@ st.subheader("Subjective Quality Scores")
 col1, col2, col3 = st.beta_columns(3)
 
 with col1:
-    st.markdown('**Interpretability**')st.subheader(Interpretability)
+    st.markdown('**Interpretability**')
+    st.subheader(Interpretability)
 with col2:
     st.markdown('**Believability**')
     st.subheader(Believability)
@@ -134,23 +135,22 @@ with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
 st.subheader("Objective Data Quality")
 
 #Importing and reading the file
-def main():
-  data_file = st.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
+#def main():
+  #data_file = st.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
   
-  if data_file is not None:
-    try:
-      df = pd.read_csv(data_file)
-    except:
-      df = pd.read_excel(data_file, engine='openpyxl')
+  #if data_file is not None:
+    #try:
+      #df = pd.read_csv(data_file)
+    #except:
+      #df = pd.read_excel(data_file, engine='openpyxl')
       
-      st.subheader("About Your Data")
+      #st.subheader("About Your Data")
       
 #Global Numbers
       TotalRows = len(df.index)
       TotalColumns = len(df.columns)
       st.markdown('No. of Rows', TotalRows)
       st.markdown('No. of Columns', TotalColumns)
-      
       st.subheader("Completeness")
 #Completeness
       st.subheader('Completeness Score')
@@ -169,6 +169,10 @@ def main():
       UniquenessScore = Uniqueness / TotalRows
       st.subheader('Uniqueness Score')
       st.text(UniquenessScore)
+      st.subheader('Column Uniqueness Score')
+      Column_Unique = df.columns.isin(Columns_Selected)
+      Column_Unique = len(df.drop_duplicates())
+      st.text(Column_Unique) 
 
 #Validity
       st.subheader("Validity")
