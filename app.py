@@ -116,6 +116,10 @@ with st.sidebar.beta_expander("2. Last and Next Refresh Date", expanded=False):
 st.subheader("Timeliness")
 st.subheader(Timeliness)
 
+#Step 3: Select Unique Columns
+with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
+    Columns_Selected = st.multiselect('Select Unique Columns', df.columns)
+
 #Timeliness
 #with st.sidebar.beta_expander("Timeliness", expanded=False):
     #st.sidebar.subheader("Timeliness")
