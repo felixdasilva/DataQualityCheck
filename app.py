@@ -77,10 +77,10 @@ with col1:
     st.markdown('**Interpretability**')
     st.subheader(Interpretability)
 with col2:
-    st.subheader("Believability")
+    st.markdown('**Believability**')
     st.subheader(Believability)
 with col3:
-    st.subheader("Objectivity")
+    st.markdown('**Objectivity**')
     st.subheader(Objectivity)    
 
 
@@ -102,7 +102,7 @@ with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=F
             df = pd.read_excel(data_file, engine='openpyxl')
             
 #step 2: Refresh Time
-with st.sidebar.beta_expander("2. Last Refresh and Next Refresh Date", expanded=False):
+with st.sidebar.beta_expander("2. Last and Next Refresh Date", expanded=False):
     LastRefresh=st.date_input('Last Refresh Date')
     NextRefresh=st.date_input('Next Refresh Date')
     Numerator = date.today() - LastRefresh
