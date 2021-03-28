@@ -147,11 +147,12 @@ st.subheader("Objective Data Quality")
       #st.subheader("About Your Data")
       
 #Global Numbers
-      TotalRows = len(df.index)
-      TotalColumns = len(df.columns)
-      st.markdown('No. of Rows', TotalRows)
-      st.markdown('No. of Columns', TotalColumns)
-      st.subheader("Completeness")
+TotalRows = len(df.index)
+TotalColumns = len(df.columns)
+st.markdown('No. of Rows', TotalRows)
+st.markdown('No. of Columns', TotalColumns)
+st.subheader("Completeness")
+
 #Completeness
       st.subheader('Completeness Score')
       Empty = df.isnull().sum()
