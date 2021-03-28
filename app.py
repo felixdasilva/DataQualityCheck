@@ -109,6 +109,12 @@ with st.sidebar.beta_expander("2. Last Refresh and Next Refresh Date", expanded=
     Numerator = Numerator.days
     Denominator = NextRefresh - LastRefresh
     Denominator = Denominator.days
+    if Denominator !=0:
+        Timeliness = (1-Numerator/Denominator)*100
+    else:
+        Timeliness = 0
+    st.subheader("Timeliness")
+    st.subheader(Timeliness)
 
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
@@ -119,12 +125,7 @@ with st.sidebar.beta_expander("Timeliness", expanded=False):
 
 
 
-if Denominator !=0:
-  Timeliness = (1-Numerator/Denominator)*100
-else:
-  Timeliness = 0
-st.subheader("Timeliness")
-st.subheader(Timeliness)
+
 
 
 st.subheader("Objective Data Quality")
