@@ -93,7 +93,7 @@ st.sidebar.subheader("Objective Data Quality")
 st.write('Upload your file to calculate your scores.')
 
 with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=False):
-    data_file = st.sidebar.file_uploader("Upload CSV or XLSX File",type=['csv','xlsx'])
+    data_file = st.file_uploader("Upload CSV or XLSX File",type=['csv','xlsx'])
     if data_file is not None:
         try:
             df = pd.read_csv(data_file)
