@@ -172,9 +172,8 @@ def main():
     st.subheader('Uniqueness Score')
     st.text(UniquenessScore)
     st.subheader('Column Uniqueness Score')
-    Column_Unique = df.columns.isin(Columns_Selected)
     st.text(Columns_Selected)
-    Column_Unique = len(df.drop_duplicates())
+    Column_Unique = len(df[Columns_Selected])-len(df[Columns_Selected].drop_duplicates())
     st.text(Column_Unique) 
 
 #Validity
