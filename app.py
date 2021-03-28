@@ -92,6 +92,7 @@ st.sidebar.subheader("Objective Data Quality")
 #Importing and reading the file
 st.write('Upload your file to calculate your scores.')
 
+#Step 1: Upload File
 with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=False):
     data_file = st.file_uploader("Upload CSV or XLSX File",type=['csv','xlsx'])
     if data_file is not None:
@@ -99,13 +100,17 @@ with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=F
             df = pd.read_csv(data_file)
         except:
             df = pd.read_excel(data_file, engine='openpyxl')
-      
+            
+#step 2: Refresh Time
+with st.sidebar.beta_expander("2. Last Refresh and Next Refresh Date", expanded=False):
+    LastRefresh=st.date_input('Last Refresh Date')
+    NextRefresh=st.date_input('Next Refresh Date')
 
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
     #st.sidebar.subheader("Timeliness")
-    LastRefresh=st.date_input('Last Refresh Date')
-    NextRefresh=st.date_input('Next Refresh Date')
+    #LastRefresh=st.date_input('Last Refresh Date')
+    #NextRefresh=st.date_input('Next Refresh Date')
 #st.write(date.today())
 Numerator = date.today() - LastRefresh
 Numerator = Numerator.days
