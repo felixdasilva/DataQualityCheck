@@ -154,31 +154,31 @@ st.markdown('No. of Columns', TotalColumns)
 st.subheader("Completeness")
 
 #Completeness
-      st.subheader('Completeness Score')
-      Empty = df.isnull().sum()
-      PercentageEmpty = (1-Empty/TotalRows)*100
-      st.text(PercentageEmpty)
-      OverallEmpty = df.isnull().sum().sum()
-      CompletenessScore = (1-(OverallEmpty/(TotalRows*TotalColumns)))*100
-      st.subheader('Overall Completeness Score')
-      st.text(CompletenessScore)
+st.subheader('Completeness Score')
+Empty = df.isnull().sum()
+PercentageEmpty = (1-Empty/TotalRows)*100
+st.text(PercentageEmpty)
+OverallEmpty = df.isnull().sum().sum()
+CompletenessScore = (1-(OverallEmpty/(TotalRows*TotalColumns)))*100
+st.subheader('Overall Completeness Score')
+st.text(CompletenessScore)
       
 #Uniqueness
  #Add option for user to ignore / select columns
   
-      Uniqueness = len(df.drop_duplicates())
-      UniquenessScore = Uniqueness / TotalRows
-      st.subheader('Uniqueness Score')
-      st.text(UniquenessScore)
-      st.subheader('Column Uniqueness Score')
-      Column_Unique = df.columns.isin(Columns_Selected)
-      Column_Unique = len(df.drop_duplicates())
-      st.text(Column_Unique) 
+Uniqueness = len(df.drop_duplicates())
+UniquenessScore = Uniqueness / TotalRows
+st.subheader('Uniqueness Score')
+st.text(UniquenessScore)
+st.subheader('Column Uniqueness Score')
+Column_Unique = df.columns.isin(Columns_Selected)
+Column_Unique = len(df.drop_duplicates())
+st.text(Column_Unique) 
 
 #Validity
-      st.subheader("Validity")
-      v1 = st.selectbox('Select the column you want to check', df.columns)
-      regexcheck = st.selectbox('What validation would you like to apply?', 'Email')
+     # st.subheader("Validity")
+      #v1 = st.selectbox('Select the column you want to check', df.columns)
+      #regexcheck = st.selectbox('What validation would you like to apply?', 'Email')
       #x = re.search(Emailregex, v1)
       #if x:
         #print("YES! We have a match!")
