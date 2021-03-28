@@ -95,10 +95,10 @@ st.write('Upload your file to calculate your scores.')
 with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=False):
     data_file = st.sidebar.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
     if data_file is not None:
-    try:
-      df = pd.read_csv(data_file)
-    except:
-      df = pd.read_excel(data_file, engine='openpyxl')
+        try:
+            df = pd.read_csv(data_file)
+        except:
+            df = pd.read_excel(data_file, engine='openpyxl')
       
 
 #Timeliness
