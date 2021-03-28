@@ -105,6 +105,10 @@ with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=F
 with st.sidebar.beta_expander("2. Last Refresh and Next Refresh Date", expanded=False):
     LastRefresh=st.date_input('Last Refresh Date')
     NextRefresh=st.date_input('Next Refresh Date')
+    Numerator = date.today() - LastRefresh
+    Numerator = Numerator.days
+    Denominator = NextRefresh - LastRefresh
+    Denominator = Denominator.days
 
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
@@ -112,10 +116,7 @@ with st.sidebar.beta_expander("Timeliness", expanded=False):
     #LastRefresh=st.date_input('Last Refresh Date')
     #NextRefresh=st.date_input('Next Refresh Date')
 #st.write(date.today())
-Numerator = date.today() - LastRefresh
-Numerator = Numerator.days
-Denominator = NextRefresh - LastRefresh
-Denominator = Denominator.days
+
 
 
 if Denominator !=0:
