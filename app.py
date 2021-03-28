@@ -117,7 +117,7 @@ st.subheader("Timeliness")
 st.subheader(Timeliness)
 
 #Timeliness
-with st.sidebar.beta_expander("Timeliness", expanded=False):
+#with st.sidebar.beta_expander("Timeliness", expanded=False):
     #st.sidebar.subheader("Timeliness")
     #LastRefresh=st.date_input('Last Refresh Date')
     #NextRefresh=st.date_input('Next Refresh Date')
@@ -128,7 +128,7 @@ with st.sidebar.beta_expander("Timeliness", expanded=False):
 
 
 
-#st.subheader("Objective Data Quality")
+st.subheader("Objective Data Quality")
 
 #Importing and reading the file
 def main():
