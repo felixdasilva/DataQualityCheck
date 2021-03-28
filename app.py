@@ -113,8 +113,8 @@ with st.sidebar.beta_expander("2. Last Refresh and Next Refresh Date", expanded=
         Timeliness = (1-Numerator/Denominator)*100
     else:
         Timeliness = 0
-    st.subheader("Timeliness")
-    st.subheader(Timeliness)
+st.subheader("Timeliness")
+st.subheader(Timeliness)
 
 #Timeliness
 with st.sidebar.beta_expander("Timeliness", expanded=False):
