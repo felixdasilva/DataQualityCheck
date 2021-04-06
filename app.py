@@ -174,9 +174,6 @@ def main():
     st.text(UniquenessScore)
     st.markdown('**Column Uniqueness Score**')
     st.text(Columns_Selected)
-    Overall_Column_Unique_Score = len(df[Columns_Selected])-len(df[Columns_Selected].drop_duplicates())
-    Overall_Column_Unique_Score = ((TotalRows-Overall_Column_Unique_Score)/TotalRows)*100
-    st.write('Overall Uniqueness Score:',Overall_Column_Unique_Score)
     for column in df[Columns_Selected]:
         Column_Unique = len(df[column])-len(df[column].drop_duplicates())
         st.write(column)
