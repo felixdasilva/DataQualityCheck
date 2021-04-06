@@ -12,6 +12,7 @@ st.set_page_config(layout="wide")
 st.sidebar.title("Data Quality Score Tool")
 ReportTitle=st.sidebar.text_input('What is the dataset name?')
 st.title(ReportTitle)
+df = pd.DataFrame([])
 
 #Regex Types
 Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
