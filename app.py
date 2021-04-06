@@ -172,7 +172,7 @@ def main():
     UniquenessScore = Uniqueness / TotalRows
     st.subheader('Uniqueness Score')
     st.text(UniquenessScore)
-    st.markdown(**'Column Uniqueness Score'**)
+    st.markdown('**Column Uniqueness Score**')
     st.text(Columns_Selected)
     for column in df[Columns_Selected]:
         Column_Unique = len(df[column])-len(df[column].drop_duplicates())
