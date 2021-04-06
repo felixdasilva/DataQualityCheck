@@ -176,8 +176,8 @@ def main():
     st.text(Columns_Selected)
     for column in df[Columns_Selected]:
         Column_Unique = len(df[column])-len(df[column].drop_duplicates())
-        st.subheader(column)
-        st.write('# of duplicates:',Column_Unique)
+        st.write(column)
+        st.write('No of duplicates:',Column_Unique)
         column_unique_score = ((TotalRows-Column_Unique)/TotalRows)*100
         st.write('Column Unique Score:', column_unique_score)
 
