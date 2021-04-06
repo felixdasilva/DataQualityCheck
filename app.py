@@ -151,8 +151,8 @@ st.subheader("Objective Data Quality")
 def main():
     TotalRows = len(df.index)
     TotalColumns = len(df.columns)
-    st.markdown('No. of Rows', TotalRows)
-    st.markdown('No. of Columns', TotalColumns)
+    st.markdown(TotalRows)
+    st.markdown(TotalColumns)
     st.subheader("Completeness")
 
 #Completeness
