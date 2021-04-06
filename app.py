@@ -176,7 +176,7 @@ def main():
     st.text(Columns_Selected)
     Column_Unique = len(df[Columns_Selected])-len(df[Columns_Selected].drop_duplicates())
     st.text(Column_Unique)
-    Column_Unique2 = df[Columns_Selected]).duplicated().any()
+    Column_Unique2 = df[Columns_Selected].duplicated().any()
     st.text(Column_Unique2)
 
 #Validity
