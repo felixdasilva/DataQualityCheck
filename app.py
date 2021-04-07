@@ -122,7 +122,7 @@ with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
 
 #Step 4: Select Unique Columns
 with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
-    emails_selected = st.select ('Select an Email Column', df.columns)
+    emails_selected = st.selectbox('Select an Email Column', df.columns)
 
 #Timeliness
 #with st.sidebar.beta_expander("Timeliness", expanded=False):
