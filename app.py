@@ -122,7 +122,6 @@ with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
 
 #Step 4: Select Unique Columns
 with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
-    st.text('Select email columns')
     emails_selected = st.multiselect('Select Email Columns', df.columns)
 
 #Timeliness
@@ -191,7 +190,7 @@ def main():
 
 #Validity
     st.subheader("Validity")
-    df2 = pd.DataFrame({'email': ['firstname@domain.com', 'avicii@heaven.com', 'this.is.a.dot@email.com', 'email1234@112.com', 'notanemail'], 'euro': [123, 321, 150, 0, 133]})
+    df2 = df[emails_selected]
     df2['isemail'] = df2['email'].apply(lambda x: True if pattern.match(x) else False)
     st.write(df2)
 
