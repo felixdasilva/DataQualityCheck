@@ -186,8 +186,9 @@ def main():
 
 #Validity
     st.subheader("Validity")
-    df['isemail'] = df['items'].apply(lambda x: True if pattern.match(x) else False)
-    st.write(df)
+    df = pd.DataFrame({'email': ['firstname@domain.com', 'avicii@heaven.com', 'this.is.a.dot@email.com', 'email1234@112.com', 'notanemail'], 'euro': [123, 321, 150, 0, 133]})
+    df['isemail'] = df['email'].apply(lambda x: True if pattern.match(x) else False)
+    st.write(df['isemail')
 
      # st.subheader("Validity")
       #v1 = st.selectbox('Select the column you want to check', df.columns)
