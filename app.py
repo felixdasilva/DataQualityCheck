@@ -185,6 +185,10 @@ def main():
         st.write('Column Unique Score:', column_unique_score)
 
 #Validity
+    st.subheader("Validity")
+    dfemail = df['items'].str.contains(r'[^@]+@[^@]+\.[^@]+')]
+    st.write(dfemail)
+
      # st.subheader("Validity")
       #v1 = st.selectbox('Select the column you want to check', df.columns)
       #regexcheck = st.selectbox('What validation would you like to apply?', 'Email')
