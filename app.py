@@ -191,7 +191,7 @@ def main():
 #Validity
     st.subheader("Validity")
     df['isemail'] = df['items'].apply(lambda x: True if pattern.match(x) else False)
-    st.write(df.to_string(columns=['items','isemail'], header=False, index=False))
+    st.write(df(columns=['items','isemail'], header=False, index=False))
     #st.write(df)
 
      # st.subheader("Validity")
