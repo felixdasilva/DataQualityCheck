@@ -15,7 +15,7 @@ st.title(ReportTitle)
 df = pd.DataFrame([1,1])
 
 #Regex Types
-Emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
+emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
 
 
 
