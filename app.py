@@ -15,7 +15,7 @@ st.title(ReportTitle)
 df = pd.DataFrame([1,1])
 
 #Regex Types
-emailregex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
+pattern = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
 
 
 
@@ -186,7 +186,7 @@ def main():
 
 #Validity
     st.subheader("Validity")
-    df['isemail'] = df['items'].apply(lambda x: True if emailregex.match(x) else False)
+    df['isemail'] = df['items'].apply(lambda x: True if pattern.match(x) else False)
     st.write(df)
 
      # st.subheader("Validity")
