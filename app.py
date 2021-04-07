@@ -114,8 +114,7 @@ with st.sidebar.beta_expander("2. Provide Refresh Dates", expanded=False):
         Timeliness = (1-Numerator/Denominator)*100
     else:
         Timeliness = 0
-st.subheader("Timeliness")
-st.subheader(Timeliness)
+
 
 #Step 3: Select Unique Columns
 with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
@@ -164,6 +163,10 @@ def main():
     CompletenessScore = (1-(OverallEmpty/(TotalRows*TotalColumns)))*100
     st.subheader('Overall Completeness Score')
     st.text(CompletenessScore)
+    
+#Timeliness
+    st.subheader("Timeliness")
+    st.subheader(Timeliness)
       
 #Uniqueness
  #Add option for user to ignore / select columns
