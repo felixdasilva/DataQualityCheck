@@ -190,7 +190,8 @@ def main():
 
 #Validity
     st.subheader("Validity")
-    df['isemail'] = df[emails_selected].apply(str lambda x: True if pattern.match(x) else False)
+    df['emailcheck']=df[emails_selected].apply(str)
+    df['isemail'] = df['emailcheck'].apply(lambda x: True if pattern.match(x) else False)
     st.write(df)
 
      # st.subheader("Validity")
