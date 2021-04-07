@@ -190,8 +190,9 @@ def main():
 
 #Validity
     st.subheader("Validity")
-    df['isemail'] = df['items'].apply(lambda x: True if pattern.match(x) else False)
-    st.table(df[['items','isemail']])
+    df['zzemails'] = df[emails_selected].astype(str)
+    df['isemail'] = df['zzemails'].apply(lambda x: True if pattern.match(x) else False)
+    st.table(df[['zzemails','isemail']])
 
      # st.subheader("Validity")
       #v1 = st.selectbox('Select the column you want to check', df.columns)
