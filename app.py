@@ -29,11 +29,16 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     st.text("1 = Needs to be explained by expert")
     st.text("5 = Needs documentation to understand")        
     st.text("10 = Complete understanding")
-    if 5 = 0:
-        Int_Descr = "No"
-    Else:
-        Int_Descr = "No"
-    st.write(Int_Descr)
+    if Interpretability == 0:
+        Int_Descr = "This measure is not applicable"
+    elif:
+        if Interpretability <5:
+            Int_Descr = "You will likely need someone to explain this data to you"
+        elif:
+            if Interpretability < 8:
+                Int_Descr = "You can understand it with some documentation"
+            else:
+                Int_Descr = "The data is self explanatory"
 
                                                          
               
