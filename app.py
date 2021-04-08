@@ -8,7 +8,7 @@ from datetime import date
 import re
 
 #configs
-st.set_page_config(layout="wide")
+st.set_page_config(layout="narrow")
 st.sidebar.title("Data Quality Score Tool")
 ReportTitle=st.sidebar.text_input('What is the dataset name?') + " Data Quality Scorecard"
 #ReportTitle = ReportTitle + " Data Quality Scorecard"
