@@ -29,16 +29,11 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     st.text("1 = Needs to be explained by expert")
     st.text("5 = Needs documentation to understand")        
     st.text("10 = Complete understanding")
-    if Interpretability = '0':
-        Int_Descr = "This measure is not applicable"
-    elif:
-        if Interpretability <5:
-            Int_Descr = "You will likely need someone to explain this data to you"
-        elif:
-            if Interpretability < 8:
-                Int_Descr = "You can understand it with some documentation"
-            else:
-                Int_Descr = "The data is self explanatory"
+    If Interpretability = 0:
+        Int_Descr = "No"
+        Else:
+            "Yes"
+
                                                          
               
 
@@ -87,6 +82,8 @@ with st.sidebar.beta_expander("Usability", expanded=False):
 
 st.subheader("Subjective Data Quality Scores")
 st.write("Subjectve Data Quality Scores measures what the users beleive to be true about the data. These are non programmatically measured scores.")
+
+
 
 dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, 6], ["Objectivity", Objectivity, 9]]),
                    columns=['Measure', 'Score', 'Description'])
