@@ -126,7 +126,7 @@ Subj_Score = (Interpretability+Believability+Objectivity+Scarcity+Multifunctiona
 
 #Sujbective Quality Display
 
-st.subheader("Subjective Data Quality Scores: " + Subj_Score)
+st.subheader("Subjective Data Quality Scores: ") + st.subheader(Subj_Score)
 st.write("Subjectve Data Quality Scores measures what the users beleive to be true about the data. These are non programmatically measured scores.")
 
 
