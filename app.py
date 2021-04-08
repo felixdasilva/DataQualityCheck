@@ -10,8 +10,8 @@ import re
 #configs
 st.set_page_config(layout="wide")
 st.sidebar.title("Data Quality Score Tool")
-ReportTitle=st.sidebar.text_input('What is the dataset name?')
-ReportTitle = ReportTitle + " Data Quality Scorecard"
+ReportTitle=st.sidebar.text_input('What is the dataset name?') + " Data Quality Scorecard"
+#ReportTitle = ReportTitle + " Data Quality Scorecard"
 st.title(ReportTitle)
 df = pd.DataFrame([1,1])
 
