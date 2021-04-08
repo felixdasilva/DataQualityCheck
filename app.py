@@ -29,7 +29,7 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     st.text("1 = Needs to be explained by expert")
     st.text("5 = Needs documentation to understand")        
     st.text("10 = Complete understanding")
-    if Interpretability = 0:
+    if Interpretability = '0':
         Int_Descr = "This measure is not applicable"
     elif:
         if Interpretability <5:
