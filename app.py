@@ -121,10 +121,12 @@ with st.sidebar.beta_expander("Usability", expanded=False):
         Usa_Descr = "Other areas might be able to use this."
     else:
         Usa_Descr = "Everyone should find this data useful."
+        
+Subj_Score = (Interpretability+Believability+Objectivity+Scarcity+Multifunctionality+Usability)/6
 
 #Sujbective Quality Display
 
-st.subheader("Subjective Data Quality Scores")
+st.subheader("Subjective Data Quality Scores: " + Subj_Score)
 st.write("Subjectve Data Quality Scores measures what the users beleive to be true about the data. These are non programmatically measured scores.")
 
 
