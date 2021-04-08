@@ -51,9 +51,9 @@ with st.sidebar.beta_expander("Believability", expanded=False):
     if Believability == 0:
         Bel_Descr = "This measure is not applicable"
     elif Believability <5:
-        Bel_Descr = "Use with a lot of caveats."
+        Bel_Descr = "Useable but understand the gaps."
     elif Believability < 8:
-        Bel_Descr = "Believable it most of the time."
+        Bel_Descr = "You can reliable use this data."
     else:
         Bel_Descr = "Complete trust in this data."
     
@@ -65,6 +65,14 @@ with st.sidebar.beta_expander("Objectivity", expanded=False):
     st.text("1 = Completely biased data.")
     st.text("5 = Useable but beware.")        
     st.text("10 = Free from any bias.")
+    if Objectivity == 0:
+        Obj_Descr = "This measure is not applicable"
+    elif Objectivity <5:
+        Obj_Descr = "Bias in the data."
+    elif Objectivity < 8:
+        Obj_Descr = "Minimal bias in the data."
+    else:
+        Obj_Descr = "Compeltely objective."
 
 with st.sidebar.beta_expander("Scarcity", expanded=False):
     st.write("The probability that other organizations also have the same data")
