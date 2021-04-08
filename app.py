@@ -29,6 +29,18 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     st.text("1 = Needs to be explained by expert")
     st.text("5 = Needs documentation to understand")        
     st.text("10 = Complete understanding")
+    if Interpretability = 0:
+        Int_Descr = "This measure is not applicable"
+            else:
+                if Interpretability <5:
+                    Int_Descr = "You will likely need someone to explain this data to you"
+                        else:
+                            if Interpretability < 8:
+                                Int_Descr = "You can understand it with some documentation"
+                                    else:
+                                        Int_Descr = "The data is self explanatory" 
+                                                         
+              
 
 with st.sidebar.beta_expander("Believability", expanded=False):
     st.write("The data is trusted")
@@ -37,6 +49,7 @@ with st.sidebar.beta_expander("Believability", expanded=False):
     st.text("1 = No, absolutely not.")
     st.text("5 = Useable but beware.")        
     st.text("10 = I'll bet my house on it.")
+    
 
 with st.sidebar.beta_expander("Objectivity", expanded=False):
     st.write("The source of the data is believed to be impartial")
@@ -73,9 +86,9 @@ with st.sidebar.beta_expander("Usability", expanded=False):
 #Sujbective Quality Display
 
 st.subheader("Subjective Data Quality Scores")
-st.text("Subjectve Data Quality Scores measures what the users beleive to be true about the data. These are non programmatically measured scores.")
+st.write("Subjectve Data Quality Scores measures what the users beleive to be true about the data. These are non programmatically measured scores.")
 
-dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, 3], ["Believability", Believability, 6], ["Objectivity", Objectivity, 9]]),
+dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, 6], ["Objectivity", Objectivity, 9]]),
                    columns=['Measure', 'Score', 'Description'])
 st.table(dfsubjective)
 
