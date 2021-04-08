@@ -81,6 +81,14 @@ with st.sidebar.beta_expander("Scarcity", expanded=False):
     st.text("1 = Very common and duplicated data.")
     st.text("5 = Might exist elsewhere.")        
     st.text("10 = This is the only source.")
+    if Scarcity == 0:
+        Sca_Descr = "This measure is not applicable"
+    elif Scarcity <5:
+        Sca_Descr = "This data is common and duplicated."
+    elif Scarcity < 8:
+        Sca_Descr = "Hard to find but there might be others like this."
+    else:
+        Sca_Descr = "Only copy known in the universe."
 
 with st.sidebar.beta_expander("Multifunctionality", expanded=False):
     st.write("The number of business processes that use or rely from this type of data")
@@ -105,7 +113,7 @@ st.write("Subjectve Data Quality Scores measures what the users beleive to be tr
 
 
 
-dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, 9]]),
+dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr]),
                    columns=['Measure', 'Score', 'Description'])
 st.table(dfsubjective)
 
