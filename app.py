@@ -72,8 +72,13 @@ with st.sidebar.beta_expander("Usability", expanded=False):
 #Sujbective Quality Display
 
 st.subheader("Subjective Data Quality Scores")
-col1, col2, col3 = st.beta_columns(3)
 st.text("Subjectve Data Quality Scores measures what the users beleive to be true about the data. These are non programmatically measured scores.")
+
+dfsubjective = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]),
+                   columns=['Measure', 'Score', 'Description'])
+st.table(dfsubjective)
+
+col1, col2, col3 = st.beta_columns(3)
 with col1:
     st.markdown('**Interpretability**')
     st.subheader(Interpretability)
@@ -190,9 +195,9 @@ def main():
 
 #Validity
     st.subheader("Validity")
-    df['zzemails'] = df[emails_selected].astype(str)
-    df['isemail'] = df['zzemails'].apply(lambda x: True if pattern.match(x) else False)
-    st.table(df[['zzemails','isemail']])
+    df['Email_Column'] = df[emails_selected].astype(str)
+    df['isemail'] = df['Email_Column'].apply(lambda x: True if pattern.match(x) else False)
+    st.table(df[['Email_Column','isemail']])
 
      # st.subheader("Validity")
       #v1 = st.selectbox('Select the column you want to check', df.columns)
