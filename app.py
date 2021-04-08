@@ -97,14 +97,30 @@ with st.sidebar.beta_expander("Multifunctionality", expanded=False):
     st.text("1 = Only we use this data.")
     st.text("5 = A few businesses use this.")        
     st.text("10 = Everyone uses this data.")
+    if Multifunctionality == 0:
+        Mul_Descr = "This measure is not applicable"
+    elif Multifunctionality <5:
+        Mul_Descr = "Few if any business relies on this data."
+    elif Multifunctionality < 8:
+        Mul_Descr = "Many business processes rely on this."
+    else:
+        Mul_Descr = "Business critical data."
     
 with st.sidebar.beta_expander("Usability", expanded=False):
     st.write("The data is helpful in performing a business function")
-    Multifunctionality = st.slider('How useful is this data to perform business functions?', 0, 10, 1)
+    Usability = st.slider('How useful is this data to perform business functions?', 0, 10, 1)
     st.text("0 = N/A")
     st.text("1 = Not useful but it's the best we have.")
     st.text("5 = Good enough most of the time.")        
     st.text("10 = Very useful and critical to day to day.")
+        if Usability == 0:
+        Usa_Descr = "This measure is not applicable"
+    elif Usability <5:
+        Usa_Descr = "This data has a very narrow purpose."
+    elif Usability < 8:
+        Usa_Descr = "Other areas might be able to use this."
+    else:
+        Usa_Descr = "Everyone should find this data useful."
 
 #Sujbective Quality Display
 
@@ -113,7 +129,7 @@ st.write("Subjectve Data Quality Scores measures what the users beleive to be tr
 
 
 
-dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr]]),
+dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["Multifunctionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
                    columns=['Measure', 'Score', 'Description'])
 st.table(dfsubjective)
 
