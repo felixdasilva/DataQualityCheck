@@ -113,7 +113,7 @@ with st.sidebar.beta_expander("Usability", expanded=False):
     st.text("1 = Not useful but it's the best we have.")
     st.text("5 = Good enough most of the time.")        
     st.text("10 = Very useful and critical to day to day.")
-        if Usability == 0:
+    if Usability == 0:
         Usa_Descr = "This measure is not applicable"
     elif Usability <5:
         Usa_Descr = "This data has a very narrow purpose."
