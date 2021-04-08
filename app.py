@@ -127,7 +127,7 @@ Subj_Score = (Interpretability+Believability+Objectivity+Scarcity+Multifunctiona
 #Sujbective Quality Display
 
 st.subheader("Subjective Data Quality")
-st.write("Subjective Data Quality measures what the users believe to be true about the data. These are non programmatically measured scores.")
+st.write("Subjective Data Quality measures what the users believe to be true about the data. Subjective assessments of data quality depends on the user’s prior experience with the data, the task which the data need to solve. Different users looking at the same data set can come to different conclusions on the quality of the data. These are non programmatically measured scores.")
 st.write("The Overall Subjective Data Quality Score is: ", Subj_Score)
 
 
