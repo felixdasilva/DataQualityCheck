@@ -31,10 +31,10 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     st.text("10 = Complete understanding")
     if Interpretability = 0:
         Int_Descr = "This measure is not applicable"
-    else:
+    elif:
         if Interpretability <5:
             Int_Descr = "You will likely need someone to explain this data to you"
-        else:
+        elif:
             if Interpretability < 8:
                 Int_Descr = "You can understand it with some documentation"
             else:
