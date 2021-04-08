@@ -71,9 +71,9 @@ with st.sidebar.beta_expander("Usability", expanded=False):
 
 #Sujbective Quality Display
 
-st.subheader("Subjective Quality Scores")
+st.subheader("Subjective Data Quality Scores")
 col1, col2, col3 = st.beta_columns(3)
-
+st.text("Subjectve Data Quality Scores measures what the users beleive to be true about the data. These are non programmatically measured scores.")
 with col1:
     st.markdown('**Interpretability**')
     st.subheader(Interpretability)
