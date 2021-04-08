@@ -32,11 +32,11 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     if Interpretability == 0:
         Int_Descr = "This measure is not applicable"
     elif Interpretability <5:
-        Int_Descr = "You will likely need someone to explain this data to you"
+        Int_Descr = "You will likely need someone to explain this data to you."
     elif Interpretability < 8:
-        Int_Descr = "You can understand it with some documentation"
+        Int_Descr = "You can understand it with some documentation."
     else:
-        Int_Descr = "The data is self explanatory"
+        Int_Descr = "The data is self explanatory."
 
                                                          
               
@@ -48,6 +48,14 @@ with st.sidebar.beta_expander("Believability", expanded=False):
     st.text("1 = No, absolutely not.")
     st.text("5 = Useable but beware.")        
     st.text("10 = I'll bet my house on it.")
+    if Believability == 0:
+        Bel_Descr = "This measure is not applicable"
+    elif Believability <5:
+        Bel_Descr = "Use with a lot of caveats."
+    elif Believability < 8:
+        Bel_Descr = "Believable it most of the time."
+    else:
+        Bel_Descr = "Complete trust in this data."
     
 
 with st.sidebar.beta_expander("Objectivity", expanded=False):
@@ -89,7 +97,7 @@ st.write("Subjectve Data Quality Scores measures what the users beleive to be tr
 
 
 
-dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, 6], ["Objectivity", Objectivity, 9]]),
+dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, 9]]),
                    columns=['Measure', 'Score', 'Description'])
 st.table(dfsubjective)
 
