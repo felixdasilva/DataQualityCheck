@@ -129,7 +129,7 @@ Subj_Score = (Interpretability+Believability+Objectivity+Scarcity+Multifunctiona
 st.subheader("Subjective Data Quality")
 st.write("The Overall Subjective Data Quality Score is: ", Subj_Score)
 st.write("Subjective Data Quality measures what the users believe to be true. It depends on the user’s prior experience with the data and the task which the data need to solve.")
-st.write("Different users looking at the same data set can come to different conclusions on the quality of the data. These are non programmatically measured scores.")
+st.write("Different users looking at the same data set can come to different conclusions on the quality of the data. These are user input solicited scores.")
 
 
 
@@ -182,8 +182,8 @@ with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
 
 
 st.subheader("Objective Data Quality")
-st.write("Objectve Data Quality measures data are rated consistently, irrespective of the end user’s perception.") 
-st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically measured scores.")
+st.write("Objectve Data Quality measures are rated consistently, irrespective of the end users' perception.") 
+st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 #Importing and reading the file
 #def main():
