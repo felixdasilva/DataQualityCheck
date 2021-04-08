@@ -29,10 +29,10 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
     st.text("1 = Needs to be explained by expert")
     st.text("5 = Needs documentation to understand")        
     st.text("10 = Complete understanding")
-    If Interpretability = 0:
-        Int_Descr = "No"
-        Else:
-            "Yes"
+If Interpretability = 0:
+    Int_Descr = "No"
+    Else:
+        "Yes"
 
                                                          
               
