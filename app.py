@@ -74,7 +74,7 @@ with st.sidebar.beta_expander("Usability", expanded=False):
 st.subheader("Subjective Data Quality Scores")
 st.text("Subjectve Data Quality Scores measures what the users beleive to be true about the data. These are non programmatically measured scores.")
 
-dfsubjective = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]),
+dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, 3], ["Believability", Believability, 6], ["Objectivity", Objectivity, 9]]),
                    columns=['Measure', 'Score', 'Description'])
 st.table(dfsubjective)
 
