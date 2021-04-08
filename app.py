@@ -113,7 +113,7 @@ st.write("Subjectve Data Quality Scores measures what the users beleive to be tr
 
 
 
-dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr]),
+dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr]]),
                    columns=['Measure', 'Score', 'Description'])
 st.table(dfsubjective)
 
