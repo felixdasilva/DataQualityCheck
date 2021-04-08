@@ -127,9 +127,9 @@ Subj_Score = (Interpretability+Believability+Objectivity+Scarcity+Multifunctiona
 #Sujbective Quality Display
 
 st.subheader("Subjective Data Quality Scores")
-st.write(#)
+st.write("#")
 st.write("Subjective Data Quality measures what the users believe to be true about the data. These are non programmatically measured scores.")
-st.write(#)
+st.write("#")
 st.write("The Overall Subjective Data Quality Score is: ", Subj_Score)
 
 
@@ -138,19 +138,7 @@ dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_
                    columns=['Measure', 'Score', 'Description'])
 st.table(dfsubjective)
 
-col1, col2, col3 = st.beta_columns(3)
-with col1:
-    st.markdown('**Interpretability**')
-    st.subheader(Interpretability)
-with col2:
-    st.markdown('**Believability**')
-    st.subheader(Believability)
-with col3:
-    st.markdown('**Objectivity**')
-    st.subheader(Objectivity)    
-
-
-
+#Objective Sidebar
 
 
 st.sidebar.subheader("Objective Data Quality")
