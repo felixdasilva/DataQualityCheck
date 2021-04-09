@@ -179,7 +179,7 @@ with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
 with st.sidebar.beta_expander("5. Specify upper and lower bounds", expanded=False):
     st.write("Select one of the following number columns and define the lower and upper bounds to use as a proxy for accuracy")
     accuracy_selected = st.selectbox('Select an column', df.columns)
-    Lower_Bound = st.number_input
+    Lower_Bound = st.number_input(label=“Prior Variance”,min_value=0.00,value=0.027,step=0.1,format="{:,.1f}")
 
 
 
