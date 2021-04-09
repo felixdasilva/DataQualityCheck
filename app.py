@@ -186,7 +186,7 @@ with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
 
 
 #dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, Bel_Descr], ["Uniqueness", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["
-functionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
+#functionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
                    #columns=['Measure', 'Score', 'Description'])
 #st.table(dfsubjective)
 
