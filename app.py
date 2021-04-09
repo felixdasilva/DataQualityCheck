@@ -252,9 +252,9 @@ def main():
     st.write("The Completeness Score per column is:", PercentageEmpty)
     
     st.subheader("Timeliness")
-    st.write("Time between the last refresh date to the next refresh date. The 'freshness' of the data.". 
+    st.write("Time between the last refresh date to the next refresh date. The 'freshness' of the data.")
     st.write(LastRefresh, date.today(), NextRefresh)
-    st.write("The Timeliness Score is: ", Timeliness)
+    st.write("The Timeliness Score is : ", Timeliness)
     
     
     # st.subheader("Validity")
