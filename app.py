@@ -244,7 +244,7 @@ def main():
     df['isemail'] = df['Email_Column'].apply(lambda x: True if pattern.match(x) else False)
     #st.table(df[['Email_Column','isemail']])
     emailviolation = TotalRows - df['isemail'].sum()
-    emailscore = (df['isemail'].sum()/TotalRows)
+    emailscore = (df['isemail'].sum()/TotalRows)*100
     formattedemailscore = float("{:.1f}".format(emailscore))
 
 
@@ -256,7 +256,7 @@ def main():
     st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 
-    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", FormattedUnique, "PlaceHolder"], ["Validitiy",formattedemailscore,"PlaceHolder"],["Accuracy",100,"PlaceHolder"],["Consistency",100,"PlaceHolder"]]),
+    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", FormattedUnique, "PlaceHolder"], ["Validitiy",formattedemailscore,"PlaceHolder"],["Accuracy",FormattedAccuracy,"PlaceHolder"],["Consistency",100,"PlaceHolder"]]),
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
@@ -295,6 +295,9 @@ def main():
     UpperViolation = (df[accuracy_selected]>Upper_Bound).sum()
     LowerViolation = (df[accuracy_selected]<Lower_Bound).sum()
     AccuracyViolation = LowerViolation + UpperViolation
+    AccuracyScore = ((TotalRows - AccuracyViolation)/TotalRows)*100
+    FormattedAccuracy = float("{:.1f}".format(AccuracyScore))
+    st.write("The Accuracy Score is : ", FormattedAccuracy)
     dfaccuracy = pd.DataFrame(np.array([[accuracy_selected, LowerViolation, UpperViolation]]), columns=["Accuracy Proxy", "Lower Bound Violation", "Upper Bound Violation"])
     st.write(dfaccuracy)
         
