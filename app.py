@@ -188,7 +188,6 @@ with st.sidebar.beta_expander("5. Specify Upper / Lower bounds", expanded=False)
     AccuracyViolation = LowerViolation + UpperViolation
     AccuracyScore = ((TotalRows - AccuracyViolation)/TotalRows)*100
     FormattedAccuracy = float("{:.1f}".format(AccuracyScore))
-    st.write("The Accuracy Score is : ", FormattedAccuracy)
 
 #Step 6: Select Consistency
 with st.sidebar.beta_expander("6. Two fields that have a relationship", expanded=False):
