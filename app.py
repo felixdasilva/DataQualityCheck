@@ -184,7 +184,7 @@ with st.sidebar.beta_expander("5. Specify Upper / Lower bounds", expanded=False)
 
 #Step 6: Select Consistency
 with st.sidebar.beta_expander("6. Two fields that have a relationship", expanded=False):
-    newdf = df.select_dtypes(include=numerics)
+    newdf = df.select_dtypes(include=[np.number])
     consist_selected = st.multiselect('Select 2 columns', newdf.columns)
   
 
