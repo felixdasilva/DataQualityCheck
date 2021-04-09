@@ -205,6 +205,7 @@ def main():
     #st.table(PercentageEmpty)
     OverallEmpty = df.isnull().sum().sum()
     CompletenessScore = (1-(OverallEmpty/(TotalRows*TotalColumns)))*100
+    FormattedComplete = float("{:.1f}".format(CompletenessScore))
     #st.subheader('Overall Completeness Score')
     #st.text(CompletenessScore)
     
@@ -243,7 +244,7 @@ def main():
     st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 
-    dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", UniquenessScore, "PlaceHolder"]]),
+    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", UniquenessScore, "PlaceHolder"]]),
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
