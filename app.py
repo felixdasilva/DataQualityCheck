@@ -216,7 +216,7 @@ def main():
       
 #Uniqueness
  #Add option for user to ignore / select columns
-    df1 = df.drop([Columns_Selected], axis=1)
+    df1 = df[df.columns[~df.columns.isin([Columns_Selected])]]
     Uniqueness = len(df1.drop_duplicates())
     UniquenessScore = (Uniqueness / TotalRows)*100
     #st.subheader('Uniqueness Score')
