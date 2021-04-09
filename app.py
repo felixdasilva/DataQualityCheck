@@ -171,9 +171,9 @@ with st.sidebar.beta_expander("2. Provide Refresh Dates", expanded=False):
 with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
     Columns_Selected = st.multiselect('Select Unique Columns', df.columns)
 
-#Step 4: Select Unique Columns
+#Step 4: Select Email Columns
 with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
-    emails_selected = st.selectbox('Select an Email Column', df.columns)
+    emails_selected = st.multiselect('Select an Email Column', df.columns)
 
 
 
@@ -225,10 +225,10 @@ def main():
     FormattedUnique = float("{:.1f}".format(UniquenessScore))
 
 #Validity
-    st.subheader("Validity")
+    #st.subheader("Validity")
     df['Email_Column'] = df[emails_selected].astype(str)
     df['isemail'] = df['Email_Column'].apply(lambda x: True if pattern.match(x) else False)
-    st.table(df[['Email_Column','isemail']])
+    #st.table(df[['Email_Column','isemail']])
 
 
 #Display Objective
@@ -266,6 +266,14 @@ def main():
         #st.write('Column Unique Score:', column_unique_score)
         dfcolumnunique = pd.DataFrame(np.array([[column, Column_Unique, formattedcolumnunique]]),  columns=['Column Name','No. Duplicates','Unique Score'])
         st.write(dfcolumnunique)
+        
+    st.subheader("Validity")
+    st.write("To check if any columns are adhering to a certan standard or format.")
+    emailviolation = df['isemail'].sum
+    emailscore = (emailviolation/TotalRows)
+    formattedemailscore = float("{:.1f}".format(emailscore))
+    dfvalidity = pd.DataFrame(np.array([["Email", violation, formattedemailscore]]),  columns=['Validity Rule','No. Violation','Validity Score'])
+    st.write(dfvalidity)
         
         
     
