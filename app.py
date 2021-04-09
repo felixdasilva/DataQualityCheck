@@ -181,6 +181,12 @@ with st.sidebar.beta_expander("5. Specify Upper / Lower bounds", expanded=False)
     accuracy_selected = st.selectbox('Select a column', df.columns)
     Lower_Bound = st.number_input('Enter lower bound')
     Upper_Bound = st.number_input('Enter upper bound')
+    UpperViolation = (df[accuracy_selected]>Upper_Bound).sum()
+    LowerViolation = (df[accuracy_selected]<Lower_Bound).sum()
+    AccuracyViolation = LowerViolation + UpperViolation
+    AccuracyScore = ((TotalRows - AccuracyViolation)/TotalRows)*100
+    FormattedAccuracy = float("{:.1f}".format(AccuracyScore))
+    st.write("The Accuracy Score is : ", FormattedAccuracy)
 
 #Step 6: Select Consistency
 with st.sidebar.beta_expander("6. Two fields that have a relationship", expanded=False):
@@ -292,11 +298,6 @@ def main():
     
     st.subheader("Accuracy")
     st.write("The data corresponds to reality and is free from bias and material errors.")
-    UpperViolation = (df[accuracy_selected]>Upper_Bound).sum()
-    LowerViolation = (df[accuracy_selected]<Lower_Bound).sum()
-    AccuracyViolation = LowerViolation + UpperViolation
-    AccuracyScore = ((TotalRows - AccuracyViolation)/TotalRows)*100
-    FormattedAccuracy = float("{:.1f}".format(AccuracyScore))
     st.write("The Accuracy Score is : ", FormattedAccuracy)
     dfaccuracy = pd.DataFrame(np.array([[accuracy_selected, LowerViolation, UpperViolation]]), columns=["Accuracy Proxy", "Lower Bound Violation", "Upper Bound Violation"])
     st.write(dfaccuracy)
