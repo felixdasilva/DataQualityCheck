@@ -270,7 +270,7 @@ def main():
     st.subheader("Validity")
     st.write("To check if any columns are adhering to a certan standard or format.")
     emailviolation = TotalRows - df['isemail'].sum()
-    emailscore = (emailviolation/TotalRows)
+    emailscore = (df['isemail'].sum()/TotalRows)
     formattedemailscore = float("{:.1f}".format(emailscore))
     dfvalidity = pd.DataFrame(np.array([["Email", emailviolation, formattedemailscore]]),  columns=['Validity Rule','No. Violation','Validity Score'])
     st.write(dfvalidity)
