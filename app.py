@@ -273,8 +273,8 @@ def main():
     
     st.subheader("Uniqueness")
     st.write("There is only one data record entry of its kind in a data table or database and to ensure that columns that are supposed to be unique are unique.")
-    st.write("Columns with their own calculated unique score are ignored for the calculation of the overall uniqueness score.")
-    st.write("The Uniqueness Score is : ", FormattedUnique)
+    st.write("Columns with their own calculated unique score are ignored for the calculation of the Dataset Uniqueness Score.")
+    st.write("The Dataset Uniqueness Score is : ", FormattedUnique)
     for column in df[Columns_Selected]:
         Column_Unique = len(df[column])-len(df[column].drop_duplicates())
         #st.write(column)
@@ -286,10 +286,17 @@ def main():
         st.write(dfcolumnunique)
         
     st.subheader("Validity")
-    st.write("To check if any columns are adhering to a certan standard or format.")
+    st.write("Extent to which data adheres to defined business rules, accepted values and accepted formats.")
     dfvalidity = pd.DataFrame(np.array([["Email", emailviolation, formattedemailscore]]),  columns=['Validity Rule','No. Violation','Validity Score'])
     st.write(dfvalidity)
-        
+    
+    st.subheader("Accuracy")
+    st.write("The data corresponds to reality and is free from bias and material errors.")
+    UpperViolation = df[accuracy_selected] > Upper_Bound   
+    LowerViolation = df[accuracy_selected] < Lower_Bound
+    AccuracyViolation = LowerViolation + UpperViolation
+    dfaccuracy = pd.DataFrame(np.array([[accuracy_selected, LowerViolation, UpperViolation]]), Columns=["Accoracy Proxy", "Lower Bound Violation", "Upper Bound Violation"])
+    st.write(dfaccuracy)
         
     
     
