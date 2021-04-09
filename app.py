@@ -230,6 +230,9 @@ def main():
     df['Email_Column'] = df[emails_selected].astype(str)
     df['isemail'] = df['Email_Column'].apply(lambda x: True if pattern.match(x) else False)
     #st.table(df[['Email_Column','isemail']])
+    emailviolation = TotalRows - df['isemail'].sum()
+    emailscore = (df['isemail'].sum()/TotalRows)
+    formattedemailscore = float("{:.1f}".format(emailscore))
 
 
 #Display Objective
@@ -240,7 +243,7 @@ def main():
     st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 
-    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", FormattedUnique, "PlaceHolder"]]),
+    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", FormattedUnique, "PlaceHolder"],["Validitiy",formattedemailscore,"PlaceHolder"]),
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
@@ -270,9 +273,6 @@ def main():
         
     st.subheader("Validity")
     st.write("To check if any columns are adhering to a certan standard or format.")
-    emailviolation = TotalRows - df['isemail'].sum()
-    emailscore = (df['isemail'].sum()/TotalRows)
-    formattedemailscore = float("{:.1f}".format(emailscore))
     dfvalidity = pd.DataFrame(np.array([["Email", emailviolation, formattedemailscore]]),  columns=['Validity Rule','No. Violation','Validity Score'])
     st.write(dfvalidity)
         
