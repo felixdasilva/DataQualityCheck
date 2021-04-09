@@ -233,7 +233,21 @@ def main():
     df['isemail'] = df['Email_Column'].apply(lambda x: True if pattern.match(x) else False)
     st.table(df[['Email_Column','isemail']])
 
-     # st.subheader("Validity")
+
+#Display Objective
+
+
+    st.header("Objective Data Quality")
+    st.write("Objectve Data Quality measures are rated consistently, irrespective of the end users' perception.") 
+    st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
+
+
+    dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, "Place"], ["Uniqueness", UniquenessScore, "PlaceHolder"]]),
+                   columns=['Measure', 'Score', 'Description'])
+    st.table(dfobjective)
+    
+    
+    # st.subheader("Validity")
       #v1 = st.selectbox('Select the column you want to check', df.columns)
       #regexcheck = st.selectbox('What validation would you like to apply?', 'Email')
       #x = re.search(Emailregex, v1)
@@ -263,17 +277,6 @@ def main():
       #Consistency = df.apply(lambda x : pd.factorize(x)[0]).corr(method='pearson', min_periods=1)
       #st.table(Consistency)
   
-    #Display Objective
-
-
-    st.header("Objective Data Quality")
-    st.write("Objectve Data Quality measures are rated consistently, irrespective of the end users' perception.") 
-    st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
-
-
-    dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, Bel_Descr], ["Uniqueness", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["Multifunctionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
-                   columns=['Measure', 'Score', 'Description'])
-    st.table(dfsubjective)
 #the page
 
 if __name__ == '__main__':
