@@ -250,8 +250,8 @@ def main():
     
     st.subheader('Completeness')
     st.write("All data entry fields must be complete and data sets should not be missing any important fields or data.")
-    st.write("The Overall Completness Score is:", CompletenessScore)
-    st.write("The Completeness Score per column is:", PercentageEmpty)
+    st.write("The Overall Completness Score is:", FormattedComplete)
+    st.table("The Completeness Score per column is:", PercentageEmpty)
     
     st.subheader("Timeliness")
     st.write("Time between the last refresh date to the next refresh date. The 'freshness' of the data.")
