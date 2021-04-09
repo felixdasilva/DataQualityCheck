@@ -247,7 +247,7 @@ def main():
     st.table(dfobjective)
     
     st.subheader('Completeness')
-    st.table(PercentageEmpty)
+    st.write(PercentageEmpty)
     
     
     
