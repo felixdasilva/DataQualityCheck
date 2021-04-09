@@ -265,7 +265,7 @@ def main():
         formattedcolumnunique = float("{:.1f}".format(column_unique_score))
         #st.write('Column Unique Score:', column_unique_score)
         dfcolumnunique = pd.DataFrame(np.array([[column, Column_Unique, formattedcolumnunique]]),  columns=['Column Name','No. Duplicates','Unique Score'])
-        st.write(dftimeliness)
+        st.write(dfcolumnunique)
         
         
     
