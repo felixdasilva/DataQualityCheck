@@ -135,7 +135,7 @@ st.write("Different users looking at the same data set can come to different con
 
 dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["Multifunctionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
                    columns=['Measure', 'Score', 'Description'])
-st.table(dfsubjective)
+st.write(dfsubjective)
 
 #Objective Sidebar
 
@@ -238,7 +238,7 @@ def main():
 
 
     st.header("Objective Data Quality")
-    st.write("Objectve Data Quality measures are rated consistently, irrespective of the end users' perception.") 
+    st.write("Objectve Data Quality measures are rated consistently, irrespective of the end user's perception.") 
     st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 
