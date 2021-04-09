@@ -263,7 +263,7 @@ def main():
     st.subheader("Uniqueness")
     st.write("To check if there are any duplicated rows in this dataset.")
     st.write("The Uniqueness Score is : ", FormattedUnique)
-            st.write(column_unique_score)
+        st.write(column_unique_score)
     
     
     # st.subheader("Validity")
