@@ -173,7 +173,7 @@ with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
 
 #Step 4: Select Email Columns
 with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
-    emails_selected = st.multiselect('Select an Email Column', df.columns)
+    emails_selected = st.selectbox('Select an Email Column', df.columns)
 
 
 
@@ -185,7 +185,8 @@ with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
 #st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 
-#dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, Bel_Descr], ["Uniqueness", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["Multifunctionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
+#dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, Bel_Descr], ["Uniqueness", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["
+functionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
                    #columns=['Measure', 'Score', 'Description'])
 #st.table(dfsubjective)
 
@@ -243,7 +244,7 @@ def main():
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
-    st.markdown('###**Completeness**')
+    st.subheader('Completeness')
     st.write("All data entry fields must be complete and data sets should not be missing any important fields or data.")
     st.write("The Overall Completness Score is:", FormattedComplete)
     st.write("The Completeness Score per column is:", PercentageEmpty)
