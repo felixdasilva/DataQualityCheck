@@ -292,8 +292,8 @@ def main():
     
     st.subheader("Accuracy")
     st.write("The data corresponds to reality and is free from bias and material errors.")
-    UpperViolation = len(df[accuracy_selected]>Upper_Bound)
-    LowerViolation = len(df[accuracy_selected]<Lower_Bound)
+    UpperViolation = df[accuracy_selected]>Upper_Bound).count()
+    LowerViolation = df[accuracy_selected]<Lower_Bound).count()
     AccuracyViolation = LowerViolation + UpperViolation
     dfaccuracy = pd.DataFrame(np.array([[accuracy_selected, LowerViolation, UpperViolation]]), columns=["Accoracy Proxy", "Lower Bound Violation", "Upper Bound Violation"])
     st.write(dfaccuracy)
