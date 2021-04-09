@@ -223,12 +223,6 @@ def main():
     #st.markdown('**Column Uniqueness Score**')
     #st.text(Columns_Selected)
     FormattedUnique = float("{:.1f}".format(UniquenessScore))
-    for column in df[Columns_Selected]:
-        Column_Unique = len(df[column])-len(df[column].drop_duplicates())
-        st.write(column)
-        st.write('No of duplicates:',Column_Unique)
-        column_unique_score = ((TotalRows-Column_Unique)/TotalRows)*100
-        #st.write('Column Unique Score:', column_unique_score)
 
 #Validity
     st.subheader("Validity")
@@ -263,7 +257,12 @@ def main():
     st.subheader("Uniqueness")
     st.write("To check if there are any duplicated rows in this dataset.")
     st.write("The Uniqueness Score is : ", FormattedUnique)
-        st.write(column_unique_score)
+    for column in df[Columns_Selected]:
+        Column_Unique = len(df[column])-len(df[column].drop_duplicates())
+        st.write(column)
+        st.write('No of duplicates:',Column_Unique)
+        column_unique_score = ((TotalRows-Column_Unique)/TotalRows)*100
+        #st.write('Column Unique Score:', column_unique_score)
     
     
     # st.subheader("Validity")
