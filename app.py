@@ -256,7 +256,7 @@ def main():
     st.write(dftimeliness)
     
     st.subheader("Uniqueness")
-    st.write("To check if there are any duplicated rows in this dataset.")
+    st.write("To check if there are any duplicated rows in this dataset. Columns with their own calculated unique score are ignored for the calculation of the overall uniqueness score.")
     st.write("The Uniqueness Score is : ", FormattedUnique)
     for column in df[Columns_Selected]:
         Column_Unique = len(df[column])-len(df[column].drop_duplicates())
