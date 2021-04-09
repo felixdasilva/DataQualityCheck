@@ -135,7 +135,7 @@ st.write("Different users looking at the same data set can come to different con
 
 dfsubjective = pd.DataFrame(np.array([["Interpretability",Interpretability, Int_Descr], ["Believability", Believability, Bel_Descr], ["Objectivity", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["Multifunctionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
                    columns=['Measure', 'Score', 'Description'])
-st.write(dfsubjective)
+st.table(dfsubjective)
 
 #Objective Sidebar
 
@@ -249,7 +249,7 @@ def main():
     st.subheader('Completeness')
     st.write("All data entry fields must be complete and data sets should not be missing any important fields or data.")
     st.text("Total # of Empty Cells / Total # of Cells")
-    st.write(PercentageEmpty)
+    st.write(CompletenessScore, PercentageEmpty)
     
     
     
