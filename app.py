@@ -248,7 +248,7 @@ def main():
     
     st.subheader('Completeness')
     st.write("All data entry fields must be complete and data sets should not be missing any important fields or data.")
-    st.write("This is calculated by: Total # of Empty Cells / Total # of Cells")
+    st.text("Total # of Empty Cells / Total # of Cells")
     st.write(PercentageEmpty)
     
     
