@@ -178,7 +178,7 @@ with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
 #Step 5: Specify lower and upper bound
 with st.sidebar.beta_expander("5. Specify Upper / Lower bounds", expanded=False):
     st.write("Select one of the following number columns and define the lower and upper bounds to use as a proxy for accuracy.")
-    accuracy_selected = pd.DataFrame(np.array([[1],[2]]))
+    accuracy_selected = {'c0':[0,1,0,1,1]}
     accuracy_selected = st.selectbox('Select a column', df.columns)
     Lower_Bound = st.number_input('Enter lower bound')
     Upper_Bound = st.number_input('Enter upper bound')
