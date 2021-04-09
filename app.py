@@ -185,7 +185,7 @@ with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
 
 
 #dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, Bel_Descr], ["Uniqueness", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["Multifunctionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
-                   columns=['Measure', 'Score', 'Description'])
+                   #columns=['Measure', 'Score', 'Description'])
 #st.table(dfsubjective)
 
 #Global Numbers
@@ -243,7 +243,7 @@ def main():
 
 
     dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, "Place"], ["Uniqueness", UniquenessScore, "PlaceHolder"]]),
-                   columns=['Measure', 'Score', 'Description'])
+                    columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
     
