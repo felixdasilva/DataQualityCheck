@@ -175,6 +175,12 @@ with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
 with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
     emails_selected = st.selectbox('Select an Email Column', df.columns)
 
+#Step 5: Specify lower and upper bound
+with st.sidebar.beta_expander("5. Specify upper and lower bounds", expanded=False):
+    st.write("Select one of the following number columns and define the lower and upper bounds to use as a proxy for accuracy")
+    accuracy_selected = st.selectbox('Select an column', df.columns)
+    Lower_Bound = st.number_input
+
 
 
 #Display Objective
