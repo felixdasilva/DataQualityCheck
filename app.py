@@ -192,20 +192,20 @@ with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
 def main():
     TotalRows = len(df.index)
     TotalColumns = len(df.columns)
-    st.markdown(TotalRows)
-    st.markdown(TotalColumns)
+    #st.markdown(TotalRows)
+    #st.markdown(TotalColumns)
     #st.subheader("Completeness")
     
 
 #Completeness
-    st.subheader('Completeness Score')
+    #st.subheader('Completeness Score')
     Empty = df.isnull().sum()
     PercentageEmpty = (1-Empty/TotalRows)*100
-    st.text(PercentageEmpty)
+    #st.table(PercentageEmpty)
     OverallEmpty = df.isnull().sum().sum()
     CompletenessScore = (1-(OverallEmpty/(TotalRows*TotalColumns)))*100
-    st.subheader('Overall Completeness Score')
-    st.text(CompletenessScore)
+    #st.subheader('Overall Completeness Score')
+    #st.text(CompletenessScore)
     
 #Timeliness
    # st.subheader("Timeliness")
@@ -245,6 +245,10 @@ def main():
     dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, "Place"], ["Uniqueness", UniquenessScore, "PlaceHolder"]]),
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
+    
+    st.subheader('Completeness')
+    st.table(PercentageEmpty)
+    
     
     
     # st.subheader("Validity")
