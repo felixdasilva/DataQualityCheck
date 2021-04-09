@@ -217,7 +217,7 @@ def main():
  #Add option for user to ignore / select columns
   
     Uniqueness = len(df.drop_duplicates())
-    UniquenessScore = Uniqueness / TotalRows
+    UniquenessScore = (Uniqueness / TotalRows)*100
     #st.subheader('Uniqueness Score')
     #st.text(UniquenessScore)
     #st.markdown('**Column Uniqueness Score**')
@@ -259,10 +259,15 @@ def main():
     st.write("The Uniqueness Score is : ", FormattedUnique)
     for column in df[Columns_Selected]:
         Column_Unique = len(df[column])-len(df[column].drop_duplicates())
-        st.write(column)
-        st.write('No of duplicates:',Column_Unique)
+        #st.write(column)
+        #st.write('No of duplicates:',Column_Unique)
         column_unique_score = ((TotalRows-Column_Unique)/TotalRows)*100
+        formattedcolumnunique = float("{:.1f}".format(column_unique_score))
         #st.write('Column Unique Score:', column_unique_score)
+        dfcolumnunique = pd.DataFrame(np.array([[column, Column_Unique, formattedcolumnunique]]),  columns=['Column Name','No. Duplicates','Unique Score'])
+        st.write(dftimeliness)
+        
+        
     
     
     # st.subheader("Validity")
