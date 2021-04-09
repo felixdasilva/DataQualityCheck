@@ -243,7 +243,7 @@ def main():
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
-    st.subheader('Completeness')
+    st.markdown('**Completeness**')
     st.write("All data entry fields must be complete and data sets should not be missing any important fields or data.")
     st.write("The Overall Completness Score is:", FormattedComplete)
     st.write("The Completeness Score per column is:", PercentageEmpty)
