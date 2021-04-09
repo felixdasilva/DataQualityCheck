@@ -176,11 +176,17 @@ with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
     emails_selected = st.selectbox('Select an Email Column', df.columns)
 
 #Step 5: Specify lower and upper bound
-with st.sidebar.beta_expander("5. Specify upper and lower bounds", expanded=False):
-    st.write("Select one of the following number columns and define the lower and upper bounds to use as a proxy for accuracy")
+with st.sidebar.beta_expander("5. Specify Upper / Lower bounds", expanded=False):
+    st.write("Select one of the following number columns and define the lower and upper bounds to use as a proxy for accuracy.")
     accuracy_selected = st.selectbox('Select a column', df.columns)
     Lower_Bound = st.number_input('Enter lower bound')
     Upper_Bound = st.number_input('Enter upper bound')
+
+#Step 6: Select Consistency
+with st.sidebar.beta_expander("6. Two fields that have a relationship", expanded=False):
+    newdf = df.select_dtypes(include=numerics)
+    consist_selected = st.multiselect('Select 2 columns', newdf.columns)
+  
 
 
 
