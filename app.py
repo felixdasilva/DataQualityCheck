@@ -293,7 +293,7 @@ def main():
     st.subheader("Accuracy")
     st.write("The data corresponds to reality and is free from bias and material errors.")
     UpperViolation = df[accuracy_selected]>Upper_Bound
-    LowerViolation = df[accuracy_selected]<Lower_Bound)
+    LowerViolation = df[accuracy_selected]<Lower_Bound
     AccuracyViolation = LowerViolation + UpperViolation
     dfaccuracy = pd.DataFrame(np.array([[accuracy_selected, LowerViolation, UpperViolation]]), columns=["Accuracy Proxy", "Lower Bound Violation", "Upper Bound Violation"])
     st.write(dfaccuracy)
