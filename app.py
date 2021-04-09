@@ -218,16 +218,17 @@ def main():
   
     Uniqueness = len(df.drop_duplicates())
     UniquenessScore = Uniqueness / TotalRows
-    st.subheader('Uniqueness Score')
-    st.text(UniquenessScore)
-    st.markdown('**Column Uniqueness Score**')
-    st.text(Columns_Selected)
+    #st.subheader('Uniqueness Score')
+    #st.text(UniquenessScore)
+    #st.markdown('**Column Uniqueness Score**')
+    #st.text(Columns_Selected)
+    FormattedUnique = float("{:.1f}".format(UniquenessScore))
     for column in df[Columns_Selected]:
         Column_Unique = len(df[column])-len(df[column].drop_duplicates())
         st.write(column)
         st.write('No of duplicates:',Column_Unique)
         column_unique_score = ((TotalRows-Column_Unique)/TotalRows)*100
-        st.write('Column Unique Score:', column_unique_score)
+        #st.write('Column Unique Score:', column_unique_score)
 
 #Validity
     st.subheader("Validity")
@@ -244,7 +245,7 @@ def main():
     st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 
-    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", UniquenessScore, "PlaceHolder"]]),
+    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", FormattedUnique, "PlaceHolder"]]),
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
@@ -258,6 +259,11 @@ def main():
     st.write("The Timeliness Score is : ", FormattedTime)
     dftimeliness = pd.DataFrame(np.array([[LastRefresh, date.today(), NextRefresh]]),  columns=['Last Refresh Date','Report Generated Date','Next Refresh Date'])
     st.write(dftimeliness)
+    
+    st.subheader("Uniqueness")
+    st.write("To check if there are any duplicated rows in this dataset.")
+    st.write("The Uniqueness Score is : ", FormattedUnique)
+    st.write(column_unique_score)
     
     
     # st.subheader("Validity")
