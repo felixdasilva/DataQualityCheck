@@ -247,9 +247,14 @@ def main():
     st.table(dfobjective)
     
     st.subheader('Completeness')
-    st.write("All data entry fields must be complete and data sets should not be missing any important fields or data. [Total # of Empty Cells / Total # of Cells]")
-    st.write("The Overall Completness Score is:", CompletenessScore, "The Completeness Score per column is:", PercentageEmpty)
+    st.write("All data entry fields must be complete and data sets should not be missing any important fields or data.")
+    st.write("The Overall Completness Score is:", CompletenessScore)
+    st.write("The Completeness Score per column is:", PercentageEmpty)
     
+    st.subheader("Timeliness")
+    st.write("Time between the last refresh date to the next refresh date. The 'freshness' of the data.". 
+    st.write(LastRefresh, date.today(), NextRefresh)
+    st.write("The Timeliness Score is: ", Timeliness)
     
     
     # st.subheader("Validity")
