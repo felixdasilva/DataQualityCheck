@@ -272,7 +272,7 @@ def main():
     emailviolation = df['isemail'].sum()
     emailscore = (emailviolation/TotalRows)
     formattedemailscore = float("{:.1f}".format(emailscore))
-    dfvalidity = pd.DataFrame(np.array([["Email", violation, formattedemailscore]]),  columns=['Validity Rule','No. Violation','Validity Score'])
+    dfvalidity = pd.DataFrame(np.array([["Email", emailviolation, formattedemailscore]]),  columns=['Validity Rule','No. Violation','Validity Score'])
     st.write(dfvalidity)
         
         
