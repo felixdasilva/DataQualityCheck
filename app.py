@@ -256,7 +256,7 @@ def main():
     st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 
-    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", FormattedUnique, "PlaceHolder"], ["Validitiy",formattedemailscore,"PlaceHolder"],["Accuracy",100,"PlaceHolder"]]),
+    dfobjective = pd.DataFrame(np.array([["Completeness",FormattedComplete, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", FormattedUnique, "PlaceHolder"], ["Validitiy",formattedemailscore,"PlaceHolder"],["Accuracy",100,"PlaceHolder"],["Consistency",100,"PlaceHolder"]]),
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
