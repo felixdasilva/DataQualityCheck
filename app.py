@@ -253,8 +253,8 @@ def main():
     
     st.subheader("Timeliness")
     st.write("Time between the last refresh date to the next refresh date. The 'freshness' of the data.")
-    Timeliness = float("{:.2f}".format(Timeliness))
-    st.write("The Timeliness Score is : ", Timeliness)
+    FormattedTime = float("{:.2f}".format(Timeliness))
+    st.write("The Timeliness Score is : ", FormattedTime)
     dftimeliness = pd.DataFrame(np.array([[LastRefresh, date.today(), NextRefresh]]),  columns=['Last Refresh Date','Report Generated Date','Next Refresh Date'])
     st.write(dftimeliness)
     
