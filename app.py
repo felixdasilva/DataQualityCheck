@@ -142,8 +142,6 @@ st.table(dfsubjective)
 
 st.sidebar.subheader("Objective Data Quality")
 
-#Importing and reading the file
-st.write('Upload your file to calculate your scores.')
 
 #Step 1: Upload File
 with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=False):
@@ -185,25 +183,19 @@ st.header("Objective Data Quality")
 st.write("Objectve Data Quality measures are rated consistently, irrespective of the end users' perception.") 
 st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
-#Importing and reading the file
-#def main():
-  #data_file = st.file_uploader("Upload CSV or Excel File",type=['csv','xlsx'])
-  
-  #if data_file is not None:
-    #try:
-      #df = pd.read_csv(data_file)
-    #except:
-      #df = pd.read_excel(data_file, engine='openpyxl')
-      
-      #st.subheader("About Your Data")
-      
+
+dfobjective = pd.DataFrame(np.array([["Completeness",CompletnessScore, "PlaceHolder"], ["Timeliness", Timeliness, Bel_Descr], ["Uniqueness", Objectivity, Obj_Descr], ["Scarcity", Scarcity, Sca_Descr],["Multifunctionality", Multifunctionality, Mul_Descr],["Usability", Usability, Usa_Descr]]),
+                   columns=['Measure', 'Score', 'Description'])
+st.table(dfsubjective)
+
 #Global Numbers
 def main():
     TotalRows = len(df.index)
     TotalColumns = len(df.columns)
     st.markdown(TotalRows)
     st.markdown(TotalColumns)
-    st.subheader("Completeness")
+    #st.subheader("Completeness")
+    
 
 #Completeness
     st.subheader('Completeness Score')
@@ -213,11 +205,11 @@ def main():
     OverallEmpty = df.isnull().sum().sum()
     CompletenessScore = (1-(OverallEmpty/(TotalRows*TotalColumns)))*100
     st.subheader('Overall Completeness Score')
-    st.text(CompletenessScore)
+    st.table(CompletenessScore)
     
 #Timeliness
-    st.subheader("Timeliness")
-    st.subheader(Timeliness)
+   # st.subheader("Timeliness")
+    #st.subheader(Timeliness)
       
 #Uniqueness
  #Add option for user to ignore / select columns
