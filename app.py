@@ -151,6 +151,8 @@ with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=F
             df = pd.read_csv(data_file)
         except:
             df = pd.read_excel(data_file, engine='openpyxl')
+    TotalRows = len(df.index)
+    TotalColumns = len(df.columns)
             
 #step 2: Refresh Time
 with st.sidebar.beta_expander("2. Provide Refresh Dates", expanded=False):
@@ -211,8 +213,6 @@ with st.sidebar.beta_expander("6. Two fields that have a relationship", expanded
 
 #Global Numbers
 def main():
-    TotalRows = len(df.index)
-    TotalColumns = len(df.columns)
     #st.markdown(TotalRows)
     #st.markdown(TotalColumns)
     #st.subheader("Completeness")
