@@ -164,6 +164,7 @@ with st.sidebar.beta_expander("2. Provide Refresh Dates", expanded=False):
         Timeliness = (1-Numerator/Denominator)*100
     else:
         Timeliness = 0
+    FormattedTime = float("{:.1f}".format(Timeliness))
 
 
 #Step 3: Select Unique Columns
@@ -242,7 +243,7 @@ def main():
     st.write("Different users looking at the same data should come to the same conclusion on the quality of the data. These are programatically calculated scores.")
 
 
-    dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", Timeliness, "Place"], ["Uniqueness", UniquenessScore, "PlaceHolder"]]),
+    dfobjective = pd.DataFrame(np.array([["Completeness",CompletenessScore, "PlaceHolder"], ["Timeliness", FormattedTime, "Place"], ["Uniqueness", UniquenessScore, "PlaceHolder"]]),
                     columns=['Measure', 'Score', 'Description'])
     st.table(dfobjective)
     
@@ -253,7 +254,6 @@ def main():
     
     st.subheader("Timeliness")
     st.write("Time between the last refresh date to the next refresh date. The 'freshness' of the data.")
-    FormattedTime = float("{:.2f}".format(Timeliness))
     st.write("The Timeliness Score is : ", FormattedTime)
     dftimeliness = pd.DataFrame(np.array([[LastRefresh, date.today(), NextRefresh]]),  columns=['Last Refresh Date','Report Generated Date','Next Refresh Date'])
     st.write(dftimeliness)
