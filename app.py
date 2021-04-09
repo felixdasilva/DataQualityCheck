@@ -205,7 +205,7 @@ def main():
     OverallEmpty = df.isnull().sum().sum()
     CompletenessScore = (1-(OverallEmpty/(TotalRows*TotalColumns)))*100
     st.subheader('Overall Completeness Score')
-    st.table(CompletenessScore)
+    st.text(CompletenessScore)
     
 #Timeliness
    # st.subheader("Timeliness")
