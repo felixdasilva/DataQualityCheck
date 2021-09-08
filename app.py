@@ -22,7 +22,7 @@ pattern = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
 
 #Subjective data Quality
 st.sidebar.subheader("Subjective Data Quality")
-with st.sidebar.beta_expander("Interpretability", expanded=False):
+with st.sidebar.expander("Interpretability", expanded=False):
     st.write("The data has a meaning and is easy to understand")
     Interpretability = st.slider('How easy is your dataset is to understand?', 0, 10, 1)
     st.text("0 = N/A")
@@ -41,7 +41,7 @@ with st.sidebar.beta_expander("Interpretability", expanded=False):
                                                          
               
 
-with st.sidebar.beta_expander("Believability", expanded=False):
+with st.sidebar.expander("Believability", expanded=False):
     st.write("The data is trusted")
     Believability = st.slider('Do you believe in this data?', 0, 10, 1)
     st.text("0 = N/A")
@@ -58,7 +58,7 @@ with st.sidebar.beta_expander("Believability", expanded=False):
         Bel_Descr = "Complete trust in this data."
     
 
-with st.sidebar.beta_expander("Objectivity", expanded=False):
+with st.sidebar.expander("Objectivity", expanded=False):
     st.write("The source of the data is believed to be impartial")
     Objectivity = st.slider('Is this data objective?', 0, 10, 1)
     st.text("0 = N/A")
@@ -74,7 +74,7 @@ with st.sidebar.beta_expander("Objectivity", expanded=False):
     else:
         Obj_Descr = "Compeltely objective."
 
-with st.sidebar.beta_expander("Scarcity", expanded=False):
+with st.sidebar.expander("Scarcity", expanded=False):
     st.write("The probability that other organizations also have the same data")
     Scarcity = st.slider('Is this data rare?', 0, 10, 1)
     st.text("0 = N/A")
@@ -90,7 +90,7 @@ with st.sidebar.beta_expander("Scarcity", expanded=False):
     else:
         Sca_Descr = "Only copy known in the universe."
 
-with st.sidebar.beta_expander("Multifunctionality", expanded=False):
+with st.sidebar.expander("Multifunctionality", expanded=False):
     st.write("The number of business processes that use or rely from this type of data")
     Multifunctionality = st.slider('Do other business areas rely on this?', 0, 10, 1)
     st.text("0 = N/A")
@@ -106,7 +106,7 @@ with st.sidebar.beta_expander("Multifunctionality", expanded=False):
     else:
         Mul_Descr = "Business critical data."
     
-with st.sidebar.beta_expander("Usability", expanded=False):
+with st.sidebar.expander("Usability", expanded=False):
     st.write("The data is helpful in performing a business function")
     Usability = st.slider('How useful is this data to perform business functions?', 0, 10, 1)
     st.text("0 = N/A")
@@ -144,7 +144,7 @@ st.sidebar.subheader("Objective Data Quality")
 
 
 #Step 1: Upload File
-with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=False):
+with st.sidebar.expander("1. Upload your dataset (or a sample)", expanded=False):
     data_file = st.file_uploader("Upload CSV or XLSX File",type=['csv','xlsx'])
     if data_file is not None:
         try:
@@ -155,7 +155,7 @@ with st.sidebar.beta_expander("1. Upload your dataset (or a sample)", expanded=F
     TotalColumns = len(df.columns)
             
 #step 2: Refresh Time
-with st.sidebar.beta_expander("2. Provide Refresh Dates", expanded=False):
+with st.sidebar.expander("2. Provide Refresh Dates", expanded=False):
     LastRefresh=st.date_input('Last Refresh Date')
     NextRefresh=st.date_input('Next Refresh Date')
     Numerator = date.today() - LastRefresh
@@ -170,15 +170,15 @@ with st.sidebar.beta_expander("2. Provide Refresh Dates", expanded=False):
 
 
 #Step 3: Select Unique Columns
-with st.sidebar.beta_expander("3. Select Unique Columns", expanded=False):
+with st.sidebar.expander("3. Select Unique Columns", expanded=False):
     Columns_Selected = st.multiselect('Select Unique Columns', df.columns)
 
 #Step 4: Select Email Columns
-with st.sidebar.beta_expander("4. Apply Validation Rules", expanded=False):
+with st.sidebar.expander("4. Apply Validation Rules", expanded=False):
     emails_selected = st.selectbox('Select an Email Column', df.columns)
 
 #Step 5: Specify lower and upper bound
-with st.sidebar.beta_expander("5. Specify Upper / Lower bounds", expanded=False):
+with st.sidebar.expander("5. Specify Upper / Lower bounds", expanded=False):
     st.write("Select one of the following number columns and define the lower and upper bounds to use as a proxy for accuracy.")
     accuracy_selected = st.selectbox('Select a column', df.columns)
     Lower_Bound = st.number_input('Enter lower bound')
@@ -190,7 +190,7 @@ with st.sidebar.beta_expander("5. Specify Upper / Lower bounds", expanded=False)
     FormattedAccuracy = float("{:.1f}".format(AccuracyScore))
 
 #Step 6: Select Consistency
-with st.sidebar.beta_expander("6. Two fields that have a relationship", expanded=False):
+with st.sidebar.expander("6. Two fields that have a relationship", expanded=False):
     newdf = df.select_dtypes(include=[np.number])
     consist_selected = st.multiselect('Select 2 columns', newdf.columns)
   
